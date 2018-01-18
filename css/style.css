@@ -4,7 +4,7 @@ h1{
     color: white;
     letter-spacing:2px;
     padding-top:15px;
-    margin-bottom:-30px;
+    margin-bottom:-10px;
 }
 
 h2{
@@ -88,7 +88,10 @@ body {
     background:linear-gradient(rgb(48, 40, 40),darkgray);
     background-repeat:no-repeat;
     background-attachment: fixed;
+    padding-bottom:30px;
 }
+
+
 
 .portrait{
     display: block;
@@ -96,6 +99,7 @@ body {
     margin-right: auto;
     box-shadow: 10px 10px 5px grey;
     border-radius:25%;
+    margin-top:60px;
 }
 
 .pad{
@@ -107,6 +111,7 @@ body {
 
     text-align:center;
     font-family: 'Playfair Display SC', serif;
+    font-weight:bold;
 }
 
 .contact > input{
@@ -127,3 +132,28 @@ body {
     text-align:center;
 
 }
+
+footer {
+    position: relative;
+    margin-top: -30px;
+    /* negative value of footer height */
+    height: 30px;
+    clear: both;
+    background-color: rgb(48, 40, 40);
+    text-align:center;
+    color:white;
+    font-family: 'Playfair Display SC', serif;
+  }
+
+  aside{
+      margin-left:40%;
+      margin-right:40%;
+      margin-top:30px;
+      text-align:center;
+      vertical-align:center;
+
+  }
+
+  aside > h4{
+    font-family: 'Radley', serif;
+  }
