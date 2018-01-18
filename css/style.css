@@ -1,0 +1,129 @@
+h1{
+    font-family: 'Playfair Display SC', serif;
+    text-align:center;
+    color: white;
+    letter-spacing:2px;
+    padding-top:15px;
+    margin-bottom:-30px;
+}
+
+h2{
+    font-family: 'Playfair Display SC', serif;
+    text-align:center;
+    letter-spacing:2px;
+    padding-top:30px;
+}
+
+h3{
+    font-family: 'Playfair Display SC', serif;
+    display:block;
+    list-style-type:none;
+
+}
+h4{
+    font-family: 'Playfair Display SC', serif;
+    font-style:italic;
+    margin-top:-16px;
+}
+p {
+text-indent: 50px;
+line-height: 1.2;
+font-family: 'Radley', serif;
+padding: 0 40px 0 40px;
+
+}
+
+li{
+    font-family: 'Radley', serif;
+}
+
+main{
+background-color:lightblue;
+margin-top:-20px;
+padding-bottom:90px;
+}
+
+header{
+    background-color:rgb(48, 40, 40);
+    margin-top:5px;
+    z-index:1;
+    }
+
+/*nav bar*/
+.bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:rgb(48, 40, 40);
+}
+
+.bar > li {
+    float: left;
+    font-family: 'Playfair Display SC', serif;
+}
+
+.bar > li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: black;
+}
+
+
+/*formatting*/
+
+.container{
+    margin-left:7%;
+    margin-right:7%;
+    background-color:white;
+    }
+
+body {
+    background:linear-gradient(rgb(48, 40, 40),darkgray);
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+}
+
+.portrait{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 10px 10px 5px grey;
+    border-radius:25%;
+}
+
+.pad{
+    padding-left:5%;
+    padding-right:5%;
+}
+
+.contact{
+
+    text-align:center;
+    font-family: 'Playfair Display SC', serif;
+}
+
+.contact > input{
+    width:50%;
+    font-family: 'Radley', serif;
+    font-size:32px;
+    background-color: rgb(48, 40, 40);
+    color:lightblue;
+    text-align:center;
+}
+
+.contact input[type=submit] {
+    margin-top:40px;
+    background-color:gray;
+    color:black;
+    width:30%;
+    display:inline-block;
+    text-align:center;
+
+}
