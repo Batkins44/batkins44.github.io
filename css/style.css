@@ -5,6 +5,7 @@ h1{
     letter-spacing:2px;
     padding-top:15px;
     margin-bottom:-10px;
+    
 }
 
 h2{
@@ -56,12 +57,18 @@ header{
     padding: 0;
     overflow: hidden;
     background-color:rgb(48, 40, 40);
+
 }
 
+
 .bar > li {
-    float: left;
+    text-align:center;
     font-family: 'Playfair Display SC', serif;
+
+    
 }
+
+
 
 .bar > li a {
     display: block;
@@ -69,18 +76,33 @@ header{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+
+
 }
 
 li a:hover {
     background-color: black;
+    animation-name:fadein;
+    animation-duration:1.5s;
+
+
+
+
+}
+
+
+
+li a:active {
+    padding-left:21px;
+    padding-right:21px;
 }
 
 
 /*formatting*/
 
 .container{
-    margin-left:7%;
-    margin-right:7%;
+    margin-left:5%;
+    margin-right:5%;
     background-color:white;
     }
 
@@ -157,3 +179,16 @@ footer {
   aside > h4{
     font-family: 'Radley', serif;
   }
+
+  @keyframes fadein{
+    from{
+        background-color:rgb(48, 40, 40);
+    }
+    to {background-color:black;}
+}
+
+@keyframes fadeout{
+    from{
+        background-color:black;
+    }
+    to {background-color:rgb(48, 40, 40)}
