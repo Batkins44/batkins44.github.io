@@ -1,3 +1,4 @@
+
 h1{
     font-family: 'Playfair Display SC', serif;
     text-align:center;
@@ -21,10 +22,17 @@ h3{
     list-style-type:none;
 
 }
+.pad h4{
+    margin-top:-16px;
+    font-style:italic;
+}
+
 h4{
     font-family: 'Playfair Display SC', serif;
-    font-style:italic;
-    margin-top:-16px;
+}
+
+h5{
+    font-family: 'Playfair Display SC', serif;
 }
 p {
 text-indent: 50px;
@@ -39,7 +47,7 @@ li{
 }
 
 main{
-background-color:lightblue;
+background:linear-gradient(lightblue 80%, peachpuff);
 margin-top:-20px;
 padding-bottom:90px;
 }
@@ -48,6 +56,7 @@ header{
     background-color:rgb(48, 40, 40);
     margin-top:5px;
     z-index:1;
+
     }
 
 /*nav bar*/
@@ -57,6 +66,8 @@ header{
     padding: 0;
     overflow: hidden;
     background-color:rgb(48, 40, 40);
+    padding-bottom:20px;
+
 
 }
 
@@ -84,6 +95,7 @@ li a:hover {
     background-color: black;
     animation-name:fadein;
     animation-duration:1.5s;
+    
 
 
 
@@ -104,6 +116,7 @@ li a:active {
     margin-left:5%;
     margin-right:5%;
     background-color:white;
+
     }
 
 body {
@@ -180,6 +193,31 @@ footer {
     font-family: 'Radley', serif;
   }
 
+.flex-item{
+    width:25%;
+    border: 2px solid darkgray;
+    text-align:left;
+    margin: 20px 20px;
+
+}
+
+.flex-item:hover{
+    box-shadow: 10px 10px 5px grey;
+}
+
+.flex-item h4,
+.flex-item h5{
+    text-align:center;
+}
+.flexbox{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+
+
+
   @keyframes fadein{
     from{
         background-color:rgb(48, 40, 40);
@@ -187,8 +225,3 @@ footer {
     to {background-color:black;}
 }
 
-@keyframes fadeout{
-    from{
-        background-color:black;
-    }
-    to {background-color:rgb(48, 40, 40)}
