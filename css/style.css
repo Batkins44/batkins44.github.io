@@ -119,6 +119,11 @@ li a:active {
 
     }
 
+.index-main{
+    padding-left:150px;
+    padding-right:150px;
+}
+
 body {
     background:linear-gradient(rgb(48, 40, 40),darkgray);
     background-repeat:no-repeat;
@@ -202,7 +207,10 @@ footer {
 }
 
 .flex-item:hover{
-    box-shadow: 10px 10px 5px grey;
+    
+    animation-name: fadebig;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
 }
 
 .flex-item h4,
@@ -225,3 +233,14 @@ footer {
     to {background-color:black;}
 }
 
+@keyframes fadebig{
+    from{
+     
+        box-shadow: 0;
+        
+
+    }
+    to{
+        box-shadow: 10px 10px 5px grey;
+    }
+}
