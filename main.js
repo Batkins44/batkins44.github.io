@@ -21,17 +21,9 @@ var blogs = [
             After a couple days of nonstop grinding and a bonus snow day, we had our honey business up and\
             running. It was a very proud feeling, being able to present a fully functioning website. Sure it\
             was a simple design, but two weeks ago I wouldn't have known where to start!</p>"},
-    {title: "Blog3",
-            date:"January 20th, 2017",
-            content:"<p>Sriracha try-hard godard, typewriter chicharrones meditation prism\
-            shoreditch meggings tacos you probably haven't heard of them organic lyft.\
-            Meditation brunch adaptogen cardigan vape shabby chic. Forage tilde trust fund \
-            drinking vinegar, raw denim irony pop-up vexillologist helvetica tumeric occupy\
-            vegan. Succulents ramps readymade chambray. Hell of kitsch gluten-free lomo,\
-                master cleanse pabst tumeric sriracha flexitarian. Fingerstache mlkshk yr\
-                ennui vice pickled ugh plaid post-ironic selvage retro single-origin coffee\
-                normcore trust fund. Succulents tofu cronut affogato selvage poutine ugh \
-                chillwave raclette poke kogi.</p>"},
+    {title: "Moving On",
+            date:"January 25th, 2017",
+            content:"<p>Yesterday, we presented our third group project. It was the first time in this class that we were assigned a style guide to work with. The instructors spoke to us as if our company was aquired by a tech company and explained what would be expected of us. This was also the first time that we were required to use Javascript to populate content on each page. That seemed to be the most beneficial part of exercise the way I see it. I feel much more comfortable using '.innerHTML' method to dynamically show content. It seems like working through problems that seem impossible is the most helpful for diving into each subsequent project or exercise</p>"},
     {title: "Blog4",
             date:"January 27th, 2017",
             content:"<p>Sriracha try-hard godard, typewriter chicharrones meditation prism\

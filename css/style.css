@@ -67,6 +67,7 @@ header{
     overflow: hidden;
     background-color:rgb(48, 40, 40);
     padding-bottom:20px;
+    
 
 
 }
@@ -75,6 +76,7 @@ header{
 .bar > li {
     text-align:center;
     font-family: 'Playfair Display SC', serif;
+
 
     
 }
