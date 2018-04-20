@@ -66,10 +66,14 @@ header{
     padding: 0;
     overflow: hidden;
     background-color:rgb(48, 40, 40);
-    padding-bottom:20px;
+    margin-bottom:20px;
     
 
 
+}
+
+.move-up{
+    margin-top:-50px;
 }
 
 
@@ -124,6 +128,7 @@ li a:active {
 .index-main{
     padding-left:150px;
     padding-right:150px;
+    padding-top:60px;
 }
 
 body {
@@ -141,7 +146,6 @@ body {
     margin-right: auto;
     box-shadow: 10px 10px 5px grey;
     border-radius:25%;
-    margin-top:60px;
 }
 
 .pad{
@@ -225,7 +229,9 @@ footer {
         justify-content:center;
     }
 
-
+.is-hidden{
+    display:none;
+}
 
 
   @keyframes fadein{

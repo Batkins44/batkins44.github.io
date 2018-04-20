@@ -1,0 +1,176 @@
+h1 {
+  font-family: 'Playfair Display SC', serif;
+  text-align: center;
+  color: white;
+  letter-spacing: 2px;
+  padding-top: 15px;
+  margin-bottom: -10px; }
+
+h2 {
+  font-family: 'Playfair Display SC', serif;
+  text-align: center;
+  letter-spacing: 2px;
+  padding-top: 30px; }
+
+h3 {
+  font-family: 'Playfair Display SC', serif;
+  display: block;
+  list-style-type: none; }
+
+.pad h4 {
+  margin-top: -16px;
+  font-style: italic; }
+
+h4 {
+  font-family: 'Playfair Display SC', serif; }
+
+h5 {
+  font-family: 'Playfair Display SC', serif; }
+
+p {
+  text-indent: 50px;
+  line-height: 1.2;
+  font-family: 'Radley', serif;
+  padding: 0 40px 0 40px; }
+
+li {
+  font-family: 'Radley', serif; }
+
+main {
+  background: linear-gradient(lightblue 80%, peachpuff);
+  margin-top: -20px;
+  padding-bottom: 90px; }
+
+header {
+  background-color: #302828;
+  margin-top: 5px;
+  z-index: 1; }
+
+/*nav bar*/
+.bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #302828;
+  margin-bottom: 80px; }
+
+.bar > li {
+  text-align: center;
+  font-family: 'Playfair Display SC', serif; }
+
+.bar > li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; }
+
+li a:hover {
+  background-color: black;
+  animation-name: fadein;
+  animation-duration: 1.5s; }
+
+li a:active {
+  padding-left: 21px;
+  padding-right: 21px; }
+
+/*formatting*/
+.container {
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: white; }
+
+.index-main {
+  padding-left: 150px;
+  padding-right: 150px; }
+
+body {
+  background: linear-gradient(#302828, darkgray);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-bottom: 30px; }
+
+.portrait {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 10px 10px 5px grey;
+  border-radius: 25%; }
+
+.pad {
+  padding-left: 5%;
+  padding-right: 5%; }
+
+.contact {
+  text-align: center;
+  font-family: 'Playfair Display SC', serif;
+  font-weight: bold; }
+
+.contact > input {
+  width: 50%;
+  font-family: 'Radley', serif;
+  font-size: 32px;
+  background-color: #302828;
+  color: lightblue;
+  text-align: center; }
+
+.contact input[type=submit] {
+  margin-top: 40px;
+  background-color: gray;
+  color: black;
+  width: 30%;
+  display: inline-block;
+  text-align: center; }
+
+footer {
+  position: relative;
+  margin-top: -30px;
+  /* negative value of footer height */
+  height: 30px;
+  clear: both;
+  background-color: #302828;
+  text-align: center;
+  color: white;
+  font-family: 'Playfair Display SC', serif; }
+
+aside {
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-top: 30px;
+  text-align: center;
+  vertical-align: center; }
+
+aside > h4 {
+  font-family: 'Radley', serif; }
+
+.flex-item {
+  width: 25%;
+  border: 2px solid darkgray;
+  text-align: left;
+  margin: 20px 20px; }
+
+.flex-item:hover {
+  animation-name: fadebig;
+  animation-duration: .5s;
+  animation-fill-mode: forwards; }
+
+.flex-item h4,
+.flex-item h5 {
+  text-align: center; }
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+@keyframes fadein {
+  from {
+    background-color: #302828; }
+  to {
+    background-color: black; } }
+@keyframes fadebig {
+  from {
+    box-shadow: 0; }
+  to {
+    box-shadow: 10px 10px 5px grey; } }
