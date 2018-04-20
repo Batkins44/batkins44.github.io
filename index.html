@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Ben Atkins</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC|Radley" rel="stylesheet">
 </head>
 <body>
@@ -15,16 +15,19 @@
             <nav>
                 <ul class="bar">
                     <li><a class="active" href="index.html">Home</a></li>
-                    <li><a href="experience.html">Professional History</a></li>
+                    <li><a href="experience.html">Professional Experience</a></li>
                     <li><a href="contact.html">Contact Me</a></li>
                     <li><a href="projects.html">Projects</a></li>
-                    <li><a href="about.html">About Me</a></li>
+                    <li class="is-hidden"><a href="about.html">About Me</a></li>
                     <li><a href="blog.html">Blog</a></li>
                 </ul>
             </nav>
         </header>
+        
         <main class="index-main">
-            <h2>Personal Story</h2>
+                <h2 class="move-up">Personal Story</h2>
+                <img class="portrait" src="images/profile.jpg" alt="Picture of Ben Atkins" height="300px" width="300px">
+
             <p>I’ve been using computers for literally as long as I can remember, 
                 so technological skills come as second nature to me. I took a Web
                 Development class in High School and received the best student award. 
@@ -45,11 +48,11 @@
                 for our career. I’m looking for the proper balance of not only
                 being grateful for the community and the moment but also 
                 looking what the future will bring!</p>
-                <img class="portrait" src="images/profile.jpg" alt="Picture of Ben Atkins" height="300px" width="300px">
         </main>
         <footer>
             &copy; 2018 Ben Atkins
         </footer>
     </div>
+    <script src="dist/app.js"></script>
 </body>
 </html>
