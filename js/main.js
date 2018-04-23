@@ -1,5 +1,7 @@
 "use strict";
 
+var contact = require('./contact');
+
 var blogs = [
     {title: "Nervous, but More Excited",
             date:"January 6th, 2017",

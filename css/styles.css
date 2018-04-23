@@ -105,12 +105,14 @@ body {
 
 .project-pic {
   border: 6px solid black;
-  transition: .5s ease; }
+  transition: .5s ease;
+  max-width: 100%; }
 
 .project-pic:hover {
   opacity: 0.3;
   width: 1000px;
-  height: 499px; }
+  height: 499px;
+  max-width: 100%; }
 
 .project-case {
   border: 6px solid black;
@@ -148,6 +150,21 @@ body {
   width: 30%;
   display: inline-block;
   text-align: center; }
+
+#message {
+  background-color: #302828;
+  color: lightblue;
+  width: 50%;
+  height: 100px;
+  font-family: 'Radley', serif;
+  font-size: 24px;
+  margin-top: 25px; }
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #302828 inset; }
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: lightblue !important; }
 
 footer {
   position: relative;
