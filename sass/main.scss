@@ -76,11 +76,10 @@ header{
 .bar > li {
     text-align:center;
     font-family: 'Playfair Display SC', serif;
-
+    float:left;
 
     
 }
-
 
 
 .bar > li a {
@@ -233,7 +232,7 @@ footer {
 
 .flex-item{
     width:25%;
-    border: 2px solid darkgray;
+    border: 6px solid black;
     text-align:left;
     margin: 20px 20px;
 
@@ -272,10 +271,13 @@ footer {
     from{
      
         box-shadow: 0;
+        width:25%;
         
 
     }
     to{
         box-shadow: 10px 10px 5px grey;
+        width:35%;
+        height:100%;
     }
 }

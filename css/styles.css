@@ -57,7 +57,8 @@ header {
 
 .bar > li {
   text-align: center;
-  font-family: 'Playfair Display SC', serif; }
+  font-family: 'Playfair Display SC', serif;
+  float: left; }
 
 .bar > li a {
   display: block;
@@ -171,7 +172,7 @@ aside > h4 {
 
 .flex-item {
   width: 25%;
-  border: 2px solid darkgray;
+  border: 6px solid black;
   text-align: left;
   margin: 20px 20px; }
 
@@ -199,8 +200,11 @@ aside > h4 {
     background-color: black; } }
 @keyframes fadebig {
   from {
-    box-shadow: 0; }
+    box-shadow: 0;
+    width: 25%; }
   to {
-    box-shadow: 10px 10px 5px grey; } }
+    box-shadow: 10px 10px 5px grey;
+    width: 35%;
+    height: 100%; } }
 
 /*# sourceMappingURL=styles.css.map */
