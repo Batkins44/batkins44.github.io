@@ -98,6 +98,31 @@ body {
   box-shadow: 10px 10px 5px grey;
   border-radius: 25%; }
 
+.project {
+  text-align: center;
+  display: block; }
+
+.project-pic {
+  border: 6px solid black;
+  transition: .5s ease; }
+
+.project-pic:hover {
+  opacity: 0.3;
+  width: 1000px;
+  height: 499px; }
+
+.project-case {
+  border: 6px solid black;
+  transition: .5s ease; }
+
+.project-case:hover {
+  opacity: 0.3;
+  width: 300px;
+  height: 162px; }
+
+.center {
+  text-align: center; }
+
 .pad {
   padding-left: 5%;
   padding-right: 5%; }
