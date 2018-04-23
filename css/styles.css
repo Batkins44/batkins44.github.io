@@ -30,11 +30,12 @@ h5 {
 p {
   text-indent: 50px;
   line-height: 1.2;
-  font-family: 'Radley', serif;
-  padding: 0 40px 0 40px; }
+  font-family: 'Heebo', sans-serif;
+  padding: 0 40px 0 40px;
+  font-size: 18px; }
 
 li {
-  font-family: 'Radley', serif; }
+  font-family: 'Heebo', sans-serif; }
 
 main {
   background: linear-gradient(lightblue 80%, peachpuff);
@@ -53,7 +54,8 @@ header {
   padding: 0;
   overflow: hidden;
   background-color: #302828;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  text-align: center; }
 
 .bar > li {
   text-align: center;
@@ -129,6 +131,11 @@ body {
 .pad {
   padding-left: 5%;
   padding-right: 5%; }
+
+.job {
+  border: 3px solid black;
+  margin-bottom: 20px;
+  padding: 0 2% 0 2%; }
 
 .contact {
   text-align: center;

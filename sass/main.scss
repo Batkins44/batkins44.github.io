@@ -34,16 +34,18 @@ h4{
 h5{
     font-family: 'Playfair Display SC', serif;
 }
+
 p {
 text-indent: 50px;
 line-height: 1.2;
-font-family: 'Radley', serif;
+font-family: 'Heebo', sans-serif;
 padding: 0 40px 0 40px;
+font-size:18px;
 
 }
 
 li{
-    font-family: 'Radley', serif;
+    font-family: 'Heebo', sans-serif;
 }
 
 main{
@@ -67,6 +69,7 @@ header{
     overflow: hidden;
     background-color:rgb(48, 40, 40);
     margin-bottom:20px;
+    text-align:center;
     
 
 
@@ -179,6 +182,12 @@ body {
 .pad{
     padding-left:5%;
     padding-right:5%;
+}
+
+.job{
+    border: 3px solid black;
+    margin-bottom:20px;
+    padding: 0 2% 0 2%;
 }
 
 .contact{

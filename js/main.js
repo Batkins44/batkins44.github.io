@@ -62,3 +62,6 @@ blogHTML.innerHTML += `<article class="flex-item"><h4>${blogs[i].title}</h4><h5>
 
 
 }
+
+let pNumVal = $("#pNum").val();
+
