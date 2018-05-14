@@ -47,17 +47,17 @@ var blogs = [
             an ugly way to solve the problem by using a counter everytime a message is created and adding counter number to both the element id and the
             dynamically created delete button. With this method, I was able to get the id of the button I clicked, then add the number at the end
             of the name of the message and delete it that way. I felt pretty good about figuring that out</p>`},
-    {title: "Blog5",
-            date:"February 3rd, 2017",
-            content:`<p>Sriracha try-hard godard, typewriter chicharrones meditation prism
-            shoreditch meggings tacos you probably haven't heard of them organic lyft.
-            Meditation brunch adaptogen cardigan vape shabby chic. Forage tilde trust fund 
-            drinking vinegar, raw denim irony pop-up vexillologist helvetica tumeric occupy
-            vegan. Succulents ramps readymade chambray. Hell of kitsch gluten-free lomo,
-                master cleanse pabst tumeric sriracha flexitarian. Fingerstache mlkshk yr
-                ennui vice pickled ugh plaid post-ironic selvage retro single-origin coffee
-                normcore trust fund. Succulents tofu cronut affogato selvage poutine ugh 
-                chillwave raclette poke kogi.</p>`}
+    {title: "Tornado Legends",
+            date:"February 25th, 2017",
+            content:`<p>Earlier this week, we finished our latest group project. The goal was to make an interactive map for a fictional theme park.
+            We were given a large amount of data regarding the park's attractions, such as location, times the attraction is available, and the type
+            of attraction it is. The idea was to make it easy for the user to see which attractions are in a certain location, by either clicking on the
+            section or allowing them to use our search engine. My biggest hurdle was to create a module that displays which attractions are available at the current
+            time. Additionally, I allowed the user to pick another time to see what was available then. Seeing as how using JSON files was brand new to me,
+            using the XHR calls and the ".then()" method proved to be challenging. This project opened my eyes to the fact that no matter how simple
+            a certain functionality seems, there is a lot more that goes into the actual coding of it. For example, I didn't consider the fact that I
+            would have to account for the time display to say "12pm - 1pm" as opposed to 12pm-13pm. I was able to fix the details and honestly, I would say
+            this is the best group project I've been a part of.  </p>`}
 ];
 
 var blogHTML = document.getElementById("blog-holder");
