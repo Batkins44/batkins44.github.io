@@ -34,6 +34,20 @@ p {
   padding: 0 40px 0 40px;
   font-size: 18px; }
 
+.bout-me {
+  border: 6px solid black;
+  border-radius: 15%;
+  float: right;
+  max-width: 60%; }
+
+.bout-me:hover {
+  animation-name: fadeblack;
+  animation-duration: .5s;
+  animation-fill-mode: forwards; }
+
+.bout-me p {
+  font-size: 16px; }
+
 li {
   font-family: 'Heebo', sans-serif; }
 
@@ -95,11 +109,10 @@ body {
   padding-bottom: 30px; }
 
 .portrait {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  float: left;
   box-shadow: 10px 10px 5px grey;
-  border-radius: 25%; }
+  border-radius: 15%;
+  border: 6px solid black; }
 
 .project {
   text-align: center;
@@ -136,6 +149,11 @@ body {
   border: 3px solid black;
   margin-bottom: 20px;
   padding: 0 2% 0 2%; }
+
+.job:hover {
+  animation-name: fadeblack;
+  animation-duration: .5s;
+  animation-fill-mode: forwards; }
 
 .contact {
   text-align: center;
@@ -185,6 +203,7 @@ footer {
   font-family: 'Playfair Display SC', serif; }
 
 aside {
+  display: inline-block;
   margin-left: 40%;
   margin-right: 40%;
   margin-top: 30px;
@@ -221,14 +240,23 @@ aside > h4 {
   from {
     background-color: #302828; }
   to {
-    background-color: black; } }
+    background-color: black;
+    color: #fff;
+    text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff; } }
 @keyframes fadebig {
   from {
     box-shadow: 0;
     width: 25%; }
   to {
     box-shadow: 10px 10px 5px grey;
-    width: 35%;
-    height: 100%; } }
+    width: 30%;
+    background-color: black;
+    color: white; } }
+@keyframes fadeblack {
+  from {
+    color: black; }
+  to {
+    background-color: black;
+    color: white; } }
 
 /*# sourceMappingURL=styles.css.map */
