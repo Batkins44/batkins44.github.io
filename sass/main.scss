@@ -1,3 +1,5 @@
+// @import 'responsive';
+
 
 h1{
     font-family: 'Playfair Display SC', serif;
@@ -254,6 +256,11 @@ body {
     margin-top:25px;
 }
 
+#about-header{
+    text-align:center;
+    padding-top:50px;
+}
+
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px  rgb(48, 40, 40) inset;
@@ -276,19 +283,44 @@ footer {
     font-family: 'Playfair Display SC', serif;
   }
 
-  aside{
-      display:inline-block;
-      margin-left:40%;
-      margin-right:40%;
-      margin-top:30px;
-      text-align:center;
-      vertical-align:center;
+aside{
+    display:inline-block;
+    margin-left:40%;
+    margin-right:40%;
+    margin-top:30px;
+    text-align:center;
+    vertical-align:center;
 
-  }
+}
 
-  aside > h4{
-    font-family: 'Radley', serif;
-  }
+aside > h4{
+font-family: 'Radley', serif;
+}
+
+#blog-print{
+    border:6px solid black;
+    margin-left:160px;
+    margin-right:160px;
+    margin-top:160px;
+    text-align: center;
+}
+
+.blogh4{
+    text-align:center;
+    margin-left:160px;
+    margin-right:160px;
+    margin-top:40px;
+}
+
+#blog-print h2{
+    padding-top:0;
+}
+
+.active{
+    animation-name: nomargin;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
 
 .flex-item{
     width:25%;
@@ -355,5 +387,15 @@ footer {
     to{
         background-color:black;
         color:white;
+    }
+}
+
+@keyframes nomargin{
+    from{
+        margin-top:160px;
+    }
+    to {
+        margin-top:0px;
+    
     }
 }

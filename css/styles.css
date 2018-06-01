@@ -185,6 +185,10 @@ body {
   font-size: 24px;
   margin-top: 25px; }
 
+#about-header {
+  text-align: center;
+  padding-top: 50px; }
+
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px #302828 inset; }
 
@@ -212,6 +216,27 @@ aside {
 
 aside > h4 {
   font-family: 'Radley', serif; }
+
+#blog-print {
+  border: 6px solid black;
+  margin-left: 160px;
+  margin-right: 160px;
+  margin-top: 160px;
+  text-align: center; }
+
+.blogh4 {
+  text-align: center;
+  margin-left: 160px;
+  margin-right: 160px;
+  margin-top: 40px; }
+
+#blog-print h2 {
+  padding-top: 0; }
+
+.active {
+  animation-name: nomargin;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; }
 
 .flex-item {
   width: 25%;
@@ -258,5 +283,10 @@ aside > h4 {
   to {
     background-color: black;
     color: white; } }
+@keyframes nomargin {
+  from {
+    margin-top: 160px; }
+  to {
+    margin-top: 0px; } }
 
 /*# sourceMappingURL=styles.css.map */
