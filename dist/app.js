@@ -1,11 +1,6 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";
 
-},{}],2:[function(require,module,exports){
-"use strict";
-
-var contact = require('./contact');
-
 var blogs = [
     {title: "Nervous, but More Excited",
             date:"January 6th, 2017",
@@ -62,12 +57,20 @@ var blogs = [
 
 var blogHTML = document.getElementById("blog-holder");
 for (let i=0; i < blogs.length;i++ ){
-blogHTML.innerHTML += `<article class="flex-item"><h4>${blogs[i].title}</h4><h5>${blogs[i].date}</h5><p>${blogs[i].content}</p></article>`;
-
-
+blogHTML.innerHTML += `<article class="flex-item" id='blog${i}'><h4>${blogs[i].title}</h4><h5>${blogs[i].date}</h5></article>`;
 }
 
-let pNumVal = $("#pNum").val();
 
 
-},{"./contact":1}]},{},[2]);
+$('.flex-item').click((element) => {
+        // console.log(element);
+        let blogid=element.currentTarget.id;
+        blogid=blogid.slice(4,5);
+        console.log(blogid);
+        $('#blog-print').html(`<h2>${blogs[blogid].title}</h2><h3>${blogs[blogid].date}</h3><p>${blogs[blogid].content}</p>`);
+        $('#blog-header').slideUp(1000);
+        $('#blog-print').addClass('active');
+});
+
+
+},{}]},{},[1]);
