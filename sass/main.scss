@@ -1,8 +1,8 @@
-// @import 'responsive';
-
+@import 'responsive';
+$primaryFont:'Hind', sans-serif;
 
 h1{
-    font-family: 'Playfair Display SC', serif;
+    font-family: $primaryFont;
     text-align:center;
     color: white;
     letter-spacing:2px;
@@ -12,14 +12,14 @@ h1{
 }
 
 h2{
-    font-family: 'Playfair Display SC', serif;
+    font-family: $primaryFont;
     text-align:center;
     letter-spacing:2px;
     padding-top:30px;
 }
 
 h3{
-    font-family: 'Playfair Display SC', serif;
+    font-family: $primaryFont;
     display:block;
     list-style-type:none;
 
@@ -30,12 +30,14 @@ h3{
 }
 
 h4{
-    font-family: 'Playfair Display SC', serif;
+    font-family: $primaryFont;
 }
 
 h5{
-    font-family: 'Playfair Display SC', serif;
+    font-family: $primaryFont;
 }
+
+
 
 p {
 text-indent: 50px;
@@ -46,9 +48,13 @@ font-size:18px;
 
 }
 
+#index-header{
+    text-align:center;
+}
+
 .bout-me{
-    border:6px solid black;
-    border-radius: 15%;
+    border:3px solid black;
+    border-radius: 3%;
     float:right;
     max-width:60%;
     
@@ -98,7 +104,7 @@ header{
 
 .bar > li {
     text-align:center;
-    font-family: 'Playfair Display SC', serif;
+    font-family: $primaryFont;
     float:left;
 
     
@@ -161,28 +167,42 @@ body {
     float:left;
     // margin-left: auto;
     // margin-right: auto;
-    box-shadow: 10px 10px 5px grey;
-    border-radius:15%;
-    border: 6px solid black;
+    box-shadow: 3px 3px 1px grey;
+    border-radius:3%;
+    border: 3px solid black;
 }
 
+.ind-project{
+    clear:both;
+    display:block;
+    overflow:auto;
+    margin:auto; 
+    height:auto;
+    padding-top:50px;
+    padding-bottom:50px;
+}
 
+.project-title{
+    text-align:center;
+}
 
 .project{
-    text-align:center;
     display:block;
+    float:right;
+    margin-right:100px;
 }
 
 .project-pic{
-    border:6px solid black;
+    border:3px solid black;
+    border-radius:3%;
     transition: .5s ease;
     max-width:100%;
 }
 
 .project-pic:hover{
-    opacity: 0.3;
-    width:1000px;
-    height:499px;
+    opacity: 0.8;
+    width:650px;
+    height:325px;
     max-width:100%;
 }
 
@@ -198,8 +218,30 @@ body {
     height:162px
 }
 
-.center{
-    text-align:center;
+.project-description{
+    float:left;
+    margin-left:100px;
+}
+
+.gray-project{
+    display:block;
+    background:linear-gradient(lightblue, darkgray 5%,lightblue 95%);
+    overflow:auto;
+    margin:auto; 
+    height:auto;
+    clear: both;
+    padding-top:50px;
+    padding-bottom:50px;
+}
+
+.gray-project-description{
+    float:right;
+    margin-right:100px;
+}
+
+.gray-project-pic{
+    float:left;
+    margin-left:100px;
 }
 
 .pad{
@@ -223,7 +265,7 @@ body {
 .contact{
 
     text-align:center;
-    font-family: 'Playfair Display SC', serif;
+    font-family: $primaryFont;
     font-weight:bold;
 }
 
@@ -259,6 +301,7 @@ body {
 #about-header{
     text-align:center;
     padding-top:50px;
+    margin-top:50px;
 }
 
 
@@ -280,7 +323,7 @@ footer {
     background-color: rgb(48, 40, 40);
     text-align:center;
     color:white;
-    font-family: 'Playfair Display SC', serif;
+    font-family: $primaryFont;
   }
 
 aside{
@@ -298,7 +341,8 @@ font-family: 'Radley', serif;
 }
 
 #blog-print{
-    border:6px solid black;
+    border:3px solid black;
+    border-radius:3%;
     margin-left:160px;
     margin-right:160px;
     margin-top:160px;
@@ -316,7 +360,7 @@ font-family: 'Radley', serif;
     padding-top:0;
 }
 
-.active{
+.active-blog{
     animation-name: nomargin;
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -324,10 +368,27 @@ font-family: 'Radley', serif;
 
 .flex-item{
     width:25%;
-    border: 6px solid black;
+    border: 3px solid black;
+    border-radius:3%;
     text-align:left;
     margin: 20px 20px;
 
+}
+
+.flex-pics{
+    border: 3px solid black;
+    border-radius:3%;
+    margin: 5px;
+    clear:both;
+    display:inline-block;
+    transition: .5s ease;
+}
+
+.flex-pics:hover{
+    opacity: 0.8;
+    width:550px;
+    height:275px;
+    max-width:100%;
 }
 
 .flex-item:hover{
@@ -337,6 +398,26 @@ font-family: 'Radley', serif;
     animation-fill-mode: forwards;
 }
 
+.flex-blog{
+    width:25%;
+    border: 3px solid black;
+    border-radius:3%;
+    text-align:center;
+    margin: 20px 20px;
+
+
+}
+
+.flex-blog:hover{
+    
+    animation-name: fadebig;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    cursor:pointer;
+}
+
+
+
 .flex-item h4,
 .flex-item h5{
     text-align:center;
@@ -345,10 +426,16 @@ font-family: 'Radley', serif;
         display:flex;
         flex-wrap:wrap;
         justify-content:center;
+        flex-direction:row;
+        clear:both;
     }
 
 .is-hidden{
     display:none;
+}
+
+footer a{
+    color:white;
 }
 
 

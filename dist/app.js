@@ -56,20 +56,21 @@ var blogs = [
 ];
 
 var blogHTML = document.getElementById("blog-holder");
+if($('#blog-holder').length > 0){
 for (let i=0; i < blogs.length;i++ ){
-blogHTML.innerHTML += `<article class="flex-item" id='blog${i}'><h4>${blogs[i].title}</h4><h5>${blogs[i].date}</h5></article>`;
-}
+blogHTML.innerHTML += `<article class="flex-blog" id='blog${i}'><h4>${blogs[i].title}</h4><h5>${blogs[i].date}</h5></article>`;
+}}
 
 
 
-$('.flex-item').click((element) => {
+$('.flex-blog').click((element) => {
         // console.log(element);
         let blogid=element.currentTarget.id;
         blogid=blogid.slice(4,5);
         console.log(blogid);
         $('#blog-print').html(`<h2>${blogs[blogid].title}</h2><h3>${blogs[blogid].date}</h3><p>${blogs[blogid].content}</p>`);
         $('#blog-header').slideUp(1000);
-        $('#blog-print').addClass('active');
+        $('#blog-print').addClass('active-blog');
 });
 
 
