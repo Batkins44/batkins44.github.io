@@ -1,6 +1,75 @@
-// @media only screen and (max-width: 600px) {
-//     .container,main,.index-main,.bar,.portrait {
-//         width:100%;
-//         margin:0;
-//     }
-// }
+@media only screen and (max-width: 600px) {
+    body {
+        width:100%;
+        margin:0;
+        padding:0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    main {
+        margin:0;
+        padding:0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .ind-project img,
+    .gray-project img {
+        display:inline-block;
+        float:none;
+        width:275px;
+        height:150px;
+        margin:0;
+        padding:0;
+        text-align:center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .ind-project,
+    .gray-project {
+        text-align:center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .ind-project h3,
+    .gray-project h3 {
+        display:inline-block;
+        width:150px;
+        text-align:center;
+        margin:0;
+        padding:0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .ind-project a {
+        display:inline-block;
+        float:none;
+        width:275px;
+        height:150px;
+        margin:0;
+        padding:0;
+        text-align:center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #blog-print {
+        display:inline;
+        border:0px solid lightblue;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #blog-header,
+    .blogh4 {
+        display:inline-block;
+        text-align:center;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+    }
+}
