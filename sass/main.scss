@@ -39,14 +39,7 @@ h5{
 
 
 
-p {
-text-indent: 50px;
-line-height: 1.2;
-font-family: 'Heebo', sans-serif;
-padding: 0 40px 0 40px;
-font-size:18px;
 
-}
 
 #index-header{
     text-align:center;
@@ -142,14 +135,7 @@ body {
 
 
 
-.ind-project{
-    clear:both;
-    display:block;
-    overflow:auto;
-    margin:auto; 
-    height:auto;
-    padding-top:50px;
-    padding-bottom:50px;}
+
 
 .project-title{
     text-align:center;
@@ -187,31 +173,17 @@ body {
     height:162px
 }
 
-.project-description{
-    float:left;
-    margin-left:100px;
-}
 
-.gray-project{
-    display:block;
-    background:linear-gradient(lightblue, darkgray 5%,lightblue 95%);
-    overflow:auto;
-    margin:auto; 
-    height:auto;
-    clear: both;
-    padding-top:50px;
-    padding-bottom:50px;
-}
-
-.gray-project-description{
-    float:right;
-    margin-right:100px;
-}
 
 .gray-project-pic{
     float:left;
     margin-left:100px;
 }
+
+
+
+
+
 
 .pad{
     padding-left:5%;

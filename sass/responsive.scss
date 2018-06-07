@@ -1,8 +1,19 @@
-// @media only screen and (max-width: 600px) {
-//     li a {
-//         width:30px%;
-//     }
-// }
+$primaryFont:'Hind', sans-serif;
+
+p {
+    text-indent: 50px;
+    line-height: 1.2;
+    font-family: 'Heebo', sans-serif;
+    padding: 0 40px 0 40px;
+    font-size:18px;
+    
+    }
+
+@media only screen and (max-width: 600px) {
+    p {
+        text-indent:0;
+    }
+}
 
 @media only screen and (max-width: 600px) {
     body {
@@ -19,6 +30,27 @@
     }
 }
 
+.project-description{
+    float:left;
+    margin-left:100px;
+}
+
+@media only screen and (max-width: 600px) {
+    .project-description {
+        margin-left:0;
+        float:none;
+        text-align:center;
+        margin-bottom:10px;
+    }
+}
+
+
+
+.gray-project-description{
+    float:right;
+    margin-right:100px;
+}
+
 @media only screen and (max-width: 600px) {
     .ind-project img,
     .gray-project img {
@@ -30,6 +62,26 @@
         padding:0;
         text-align:center;
     }
+}
+.ind-project{
+    clear:both;
+    display:block;
+    overflow:auto;
+    margin:auto; 
+    height:auto;
+    padding-top:50px;
+    padding-bottom:50px;
+}
+
+.gray-project{
+    display:block;
+    background:linear-gradient(lightblue, darkgray 5%,lightblue 95%);
+    overflow:auto;
+    margin:auto; 
+    height:auto;
+    clear: both;
+    padding-top:50px;
+    padding-bottom:50px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -60,6 +112,29 @@
         padding:0;
         text-align:center;
     }
+}
+
+#puck-luck-deployed{
+    font-family: $primaryFont;
+    border:3px solid black;
+    border-radius:7%;
+    color:black;
+    text-decoration:none;
+    padding:5px;
+}
+
+@media only screen and (max-width: 600px) {
+    #puck-luck-deployed{
+        display:inline-block;
+        max-width: 175px;
+        max-height: 30px;
+    }
+}
+
+#puck-luck-deployed:hover{
+    animation-name: fadeblack;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
 }
 
 
@@ -105,6 +180,7 @@
         display:inline-block;
         text-align:center;
         float:none;
+        border:none;
         // width:330px;
         // height:500px;
     }
@@ -137,6 +213,7 @@
         max-width: 100%;
         margin-left: 10px;
         margin-right: 10px;
+        border:none;
     }
 }
 
@@ -165,6 +242,7 @@ aside{
         max-width: 100%;
         margin-left:0;
         margin-right:0;
+        display:block;
     }
 }
 
