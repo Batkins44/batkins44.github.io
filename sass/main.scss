@@ -52,23 +52,6 @@ font-size:18px;
     text-align:center;
 }
 
-.bout-me{
-    border:3px solid black;
-    border-radius: 3%;
-    float:right;
-    max-width:60%;
-    
-}
-
-.bout-me:hover{
-    animation-name: fadeblack;
-    animation-duration: .5s;
-    animation-fill-mode: forwards;
-}
-.bout-me p{
-    font-size:16px;
-    
-}
 
 li{
     font-family: 'Heebo', sans-serif;
@@ -115,7 +98,7 @@ header{
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 10px 10px;
     text-decoration: none;
 
 
@@ -149,10 +132,6 @@ li a:active {
 
     }
 
-.index-main{
-    padding-left:150px;
-    padding-right:150px;
-}
 
 body {
     background:linear-gradient(rgb(48, 40, 40),darkgray);
@@ -163,15 +142,6 @@ body {
 
 
 
-.portrait{
-    float:left;
-    // margin-left: auto;
-    // margin-right: auto;
-    box-shadow: 3px 3px 1px grey;
-    border-radius:3%;
-    border: 3px solid black;
-}
-
 .ind-project{
     clear:both;
     display:block;
@@ -179,8 +149,7 @@ body {
     margin:auto; 
     height:auto;
     padding-top:50px;
-    padding-bottom:50px;
-}
+    padding-bottom:50px;}
 
 .project-title{
     text-align:center;
@@ -278,15 +247,6 @@ body {
     text-align:center;
 }
 
-.contact input[type=submit] {
-    margin-top:40px;
-    background-color:gray;
-    color:black;
-    width:30%;
-    display:inline-block;
-    text-align:center;
-
-}
 
 #message{
     background-color: rgb(48, 40, 40);
@@ -326,33 +286,16 @@ footer {
     font-family: $primaryFont;
   }
 
-aside{
-    display:inline-block;
-    margin-left:40%;
-    margin-right:40%;
-    margin-top:30px;
-    text-align:center;
-    vertical-align:center;
 
-}
 
 aside > h4{
 font-family: 'Radley', serif;
 }
 
-#blog-print{
-    border:3px solid black;
-    border-radius:3%;
-    margin-left:160px;
-    margin-right:160px;
-    margin-top:160px;
-    text-align: center;
-}
+
 
 .blogh4{
     text-align:center;
-    margin-left:160px;
-    margin-right:160px;
     margin-top:40px;
 }
 
