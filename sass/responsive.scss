@@ -1,3 +1,9 @@
+// @media only screen and (max-width: 600px) {
+//     li a {
+//         width:30px%;
+//     }
+// }
+
 @media only screen and (max-width: 600px) {
     body {
         width:100%;
@@ -56,10 +62,20 @@
     }
 }
 
+
+#blog-print{
+    border:3px solid black;
+    border-radius:3%;
+    margin-left:160px;
+    margin-right:160px;
+    margin-top:160px;
+    text-align: center;
+}
+
 @media only screen and (max-width: 600px) {
     #blog-print {
         display:inline;
-        border:0px solid lightblue;
+        border:none;
     }
 }
 
@@ -72,4 +88,92 @@
         margin-right: 0;
         margin-top: 0;
     }
+}
+
+.portrait{
+    display:block;
+    float:left;
+    // margin-left: auto;
+    // margin-right: auto;
+    box-shadow: 3px 3px 1px grey;
+    border-radius:3%;
+    border: 3px solid black;
+}
+
+@media only screen and (max-width: 600px) {
+    .portrait {
+        display:inline-block;
+        text-align:center;
+        float:none;
+        // width:330px;
+        // height:500px;
+    }
+}
+
+.index-main{
+    padding-left:150px;
+    padding-right:150px;
+}
+
+@media only screen and (max-width: 600px) {
+    .index-main {
+        text-align:center;
+        padding-left:0px;
+        padding-right:0px;
+    }
+}
+
+.bout-me{
+    border:3px solid black;
+    border-radius: 3%;
+    float:right;
+    max-width:60%;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .bout-me {
+        float:none;
+        max-width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.bout-me:hover{
+    animation-name: fadeblack;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+.bout-me p{
+    font-size:16px;
+    
+}
+
+aside{
+    display:inline-block;
+    margin-left:40%;
+    margin-right:40%;
+    margin-top:30px;
+    text-align:center;
+    vertical-align:center;
+
+}
+
+@media only screen and (max-width: 600px) {
+    aside {
+        max-width: 100%;
+        margin-left:0;
+        margin-right:0;
+    }
+}
+
+.contact input[type=submit] {
+    margin-top:40px;
+    background-color:gray;
+    color:black;
+    width:40%;
+    display:inline-block;
+    text-align:center;
+
 }
