@@ -1,4 +1,5 @@
 "use strict";
+let projects = require("./projects");
 
 var blogs = [
     {title: "Nervous, but More Excited",
@@ -71,4 +72,6 @@ $('.flex-blog').click((element) => {
         $('#blog-header').slideUp(1000);
         $('#blog-print').addClass('active-blog');
 });
+
+
 

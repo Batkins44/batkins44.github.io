@@ -17,8 +17,9 @@ p {
   main {
     margin: 0;
     padding: 0; } }
-.project-description {
-  float: left;
+.project-description,
+.gray-project-description {
+  display: block;
   margin-left: 100px; }
 
 @media only screen and (max-width: 600px) {
@@ -27,10 +28,6 @@ p {
     float: none;
     text-align: center;
     margin-bottom: 10px; } }
-.gray-project-description {
-  float: right;
-  margin-right: 100px; }
-
 @media only screen and (max-width: 600px) {
   .ind-project img,
   .gray-project img {
@@ -85,7 +82,8 @@ p {
   font-family: "Hind", sans-serif;
   border: 3px solid black;
   border-radius: 7%;
-  color: black;
+  color: lightblue;
+  background-color: black;
   text-decoration: none;
   padding: 5px; }
 
@@ -95,7 +93,7 @@ p {
     max-width: 175px;
     max-height: 30px; } }
 #puck-luck-deployed:hover {
-  animation-name: fadeblack;
+  animation-name: fadeblue;
   animation-duration: .5s;
   animation-fill-mode: forwards; }
 
@@ -183,6 +181,111 @@ aside {
   width: 40%;
   display: inline-block;
   text-align: center; }
+
+@keyframes fadeblue {
+  from {
+    background-color: black;
+    color: lightblue; }
+  to {
+    background-color: lightblue;
+    color: black; } }
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */ }
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px; }
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px; }
+
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s; }
+
+@keyframes zoom {
+  from {
+    transform: scale(0); }
+  to {
+    transform: scale(1); } }
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s; }
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer; }
+
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%; } }
+.project-display-btns {
+  font-family: "Hind", sans-serif;
+  border: 3px solid black;
+  border-radius: 7%;
+  color: lightblue;
+  background-color: black;
+  text-decoration: none;
+  padding: 5px;
+  margin-left: 15px;
+  margin-right: 15px; }
+
+@media only screen and (max-width: 600px) {
+  .project-display-btns {
+    display: inline-block;
+    max-width: 175px;
+    max-height: 30px; } }
+.project-display-btns:hover {
+  animation-name: fadeblue;
+  animation-duration: .5s;
+  animation-fill-mode: forwards; }
+
+#slide1 {
+  display: none; }
+
+#slide2 {
+  display: none; }
+
+#slide3 {
+  display: none; }
+
+#slide4 {
+  display: none; }
 
 h1 {
   font-family: "Hind", sans-serif;
@@ -272,6 +375,10 @@ body {
   background-attachment: fixed;
   padding-bottom: 30px; }
 
+.hover-notice {
+  text-align: center;
+  color: orangered; }
+
 .project-title {
   text-align: center; }
 
@@ -288,8 +395,8 @@ body {
 
 .project-pic:hover {
   opacity: 0.8;
-  width: 650px;
-  height: 325px;
+  width: 1000px;
+  height: 500px;
   max-width: 100%; }
 
 .project-case {
@@ -302,8 +409,8 @@ body {
   height: 162px; }
 
 .gray-project-pic {
-  float: left;
-  margin-left: 100px; }
+  float: right;
+  margin-right: 100px; }
 
 .pad {
   padding-left: 5%;
@@ -385,20 +492,6 @@ aside > h4 {
   text-align: left;
   margin: 20px 20px; }
 
-.flex-pics {
-  border: 3px solid black;
-  border-radius: 3%;
-  margin: 5px;
-  clear: both;
-  display: inline-block;
-  transition: .5s ease; }
-
-.flex-pics:hover {
-  opacity: 0.8;
-  width: 550px;
-  height: 275px;
-  max-width: 100%; }
-
 .flex-item:hover {
   animation-name: fadebig;
   animation-duration: .5s;
@@ -427,6 +520,25 @@ aside > h4 {
   justify-content: center;
   flex-direction: row;
   clear: both; }
+
+.flex-project {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; }
+
+.flex-pics {
+  border: 3px solid black;
+  border-radius: 3%;
+  margin: 5px;
+  clear: both;
+  display: inline-block;
+  transition: .5s ease; }
+
+.flex-pics:hover {
+  opacity: 0.8;
+  width: 1000px;
+  height: 500px;
+  max-width: 100%; }
 
 .is-hidden {
   display: none; }

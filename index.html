@@ -11,7 +11,8 @@
     <body>
     <div class="container">
         <header>
-            <h1>Ben Atkins</h1><br>
+            <h1>Ben Atkins</h1>
+            <h1></h1>
             <nav>
                 <ul class="bar">
                     <li><a class="active" href="index.html">Home</a></li>
@@ -20,62 +21,71 @@
                     <!-- <li><a href="projects.html">Projects</a></li> -->
                     <li><a href="about.html">About Me</a></li>
                     <li><a href="blog.html">Blog</a></li>
-                    <div class="underbar"></div>
                 </ul>
             </nav>
         </header>
         <main>
             <div id="index-header">
-                <h2>Hi, My Name is Ben</h2>
-                <h3>I am a Data-Hungry Web Developer and Designer</h3>
+                <h2 id='slide1'>Hi, My Name is Ben</h2>
+                <h3 id='slide2'>I am a Data-Hungry Web Developer and Designer</h3>
+                <h3 id='slide3'>Here are some of my favorite projects:</h3>
+                <div id='slide4'>
+                <button class='project-display-btns' id='puck-luck-btn'>Puck-Luck</button>
+                <button class='project-display-btns' id='game-swap-btn'>Game Swap</button>
+                <button class='project-display-btns' id='wyfy-btn'>Wyfy</button>
             </div>
+            </div>
+            <div id='project-print'>
+            <div class="full-project" id='puck-luck-project'>
                 <hr>
                 <h2 class='project-title'>Puck-Luck</h2>
-            <span class='ind-project'>
+                <h3 class="hover-notice">Hover over images to see code snippets associated with each component mentioned</h3>
+            <pan class='ind-project'>
             <div class="project-description">
             <h3>Hockey Stats Retriever<br>
             NSS Front End Capstone Project</h3>
             <a id='puck-luck-deployed' href="https://batkins44.github.io/puck-luck/">Go to Deployed Site!</a>
             </div>
-            <a class="project" href="https://batkins44.github.io/puck-luck/">
-                <img class="project-pic" alt="puck-luck" src="images/puck-luck.png" width="600px" height="300px"></a>
+                <img id='index-pic-1' class="project-pic project" alt="puck-luck" src="images/puck-luck.png" width="600px" height="300px">
             </span>
             <span class='gray-project'>
 
                 <div class="gray-project-description">
-                    <h3>Challenge Statement</h3>
+                    <h3>Challenge Statement and Style Guide</h3>
+                    
                 </div>
-                <img class="gray-project-pic project-pic" alt="challenge statement" src="images/challenge.PNG" width="600px" height="300px">
+                <br>
+                <img id='challenge-pic' class="gray-project-pic project-pic" alt="challenge statement" src="images/challenge.png" width="600px" height="300px">
 
             </span>
             <span class='ind-project'>
                     <div class="project-description">
-                    <h3>The target persona for "Puck-Luck"</h3>
+                    <h3>Look at the NHL Schedule for any given day</h3>
                     </div>
 
-                        <img class="project-pic project" alt="persona" src="images/dylan.PNG" width="600px" height="300px">
+                        <img class="project-pic project" alt="persona" src="images/schedule.png" width="600px" height="300px">
                     </span>
                     <span class='gray-project'>
         
                         <div class="gray-project-description">
-                            <h3>Minimum Viable Product</h3>
+                            <h3>Catch up with the latest Hockey news</h3>
                         </div>
-                        <img class="gray-project-pic project-pic" alt="MVP" src="images/mvp.PNG" width="600px" height="300px">
+                        <img class="gray-project-pic project-pic" alt="MVP" src="images/news.png" width="600px" height="300px">
 
                     </span>
                     <span class='ind-project'>
                             <div class="project-description">
-                            <h3>The Style-Guide for "Puck-Luck"</h3>
+                            <h3>Up to Date Team Stats</h3>
                             </div>
         
-                                <img class="project-pic project" alt="style guide" src="images/style.PNG" width="600px" height="300px">
+                                <img class="project-pic project" alt="style guide" src="images/byteam.png" width="600px" height="300px">
                             </span>
                             <span class='gray-project'>
                 
                                 <div class="gray-project-description">
                                     <h3>Search Through Players in the League</h3>
                                 </div>
-                                <img class="gray-project-pic project-pic" alt="search" src="images/search.PNG" width="600px" height="300px">
+                                <img class="gray-project-pic project-pic" alt="search" src="images/search.png" width="600px" height="300px">
 
                             </span>
                             <span class='ind-project'>
@@ -83,11 +93,14 @@
                                     <h3>Save your Favorite Players and Teams to View their Status Daily</h3>
                                     <br>
                                     </div>
-                                        <div class='flexbox'>
-                                        <img class="flex-pics" alt="favorite-team" src="images/fav-team.PNG" width="500px" height="250px">
-                                        <img class="flex-pics" alt="favorite-player" src="images/fav-player.PNG" width="500px" height="250px">
+                                        <div class='flex-project'>
+                                        <img class="flex-pics project-pic" alt="favorite-team" src="images/fav-team.png" width="600px" height="300px">
+                                        <img class="flex-pics project-pic" alt="favorite-player" src="images/fav-player.png" width="600px" height="300px">
                                     </div>
                                     </span>
+                                </div>
+                            </div>
+                                
                     <aside>
                             <h4>Find Me on Social Media</h4>
                         <a href="https://github.com/Batkins44"><img src="images/github.png" width="40" height="40" title="Github" alt="Github"></a>
