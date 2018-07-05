@@ -384,7 +384,8 @@ body {
   color: orangered; }
 
 .project-title {
-  text-align: center; }
+  text-align: center;
+  color: black; }
 
 .project {
   display: block;
