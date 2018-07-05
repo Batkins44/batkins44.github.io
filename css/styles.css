@@ -161,12 +161,8 @@ p {
   font-size: 16px; }
 
 aside {
-  display: inline-block;
-  margin-left: 40%;
-  margin-right: 40%;
-  margin-top: 30px;
   text-align: center;
-  vertical-align: center; }
+  margin-top: 175px; }
 
 @media only screen and (max-width: 600px) {
   aside {
@@ -287,6 +283,9 @@ aside {
 #slide4 {
   display: none; }
 
+.hide {
+  display: none; }
+
 h1 {
   font-family: "Hind", sans-serif;
   text-align: center;
@@ -315,6 +314,11 @@ h4 {
 
 h5 {
   font-family: "Hind", sans-serif; }
+
+.standard-header {
+  text-align: center;
+  margin-left: 100px;
+  margin-right: 100px; }
 
 #index-header {
   text-align: center; }
@@ -524,7 +528,8 @@ aside > h4 {
 .flex-project {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; }
+  align-items: flex-end;
+  margin-right: 100px; }
 
 .flex-pics {
   border: 3px solid black;

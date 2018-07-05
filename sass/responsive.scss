@@ -232,12 +232,8 @@ p {
 }
 
 aside{
-    display:inline-block;
-    margin-left:40%;
-    margin-right:40%;
-    margin-top:30px;
     text-align:center;
-    vertical-align:center;
+    margin-top:175px;
 
 }
 
@@ -383,4 +379,10 @@ display:none;
 #slide4{
 display:none;
 
+}
+
+
+
+.hide{
+    display:none;
 }
