@@ -28,6 +28,10 @@ p {
     float: none;
     text-align: center;
     margin-bottom: 10px; } }
+.wyfy-project-description {
+  display: block;
+  text-align: center; }
+
 @media only screen and (max-width: 600px) {
   .ind-project img,
   .gray-project img {
@@ -78,7 +82,7 @@ p {
     margin: 0;
     padding: 0;
     text-align: center; } }
-#puck-luck-deployed {
+.goto-project {
   font-family: "Hind", sans-serif;
   border: 3px solid black;
   border-radius: 7%;
@@ -88,14 +92,17 @@ p {
   padding: 5px; }
 
 @media only screen and (max-width: 600px) {
-  #puck-luck-deployed {
+  .goto-project {
     display: inline-block;
     max-width: 175px;
     max-height: 30px; } }
-#puck-luck-deployed:hover {
+.goto-project:hover {
   animation-name: fadeblue;
   animation-duration: .5s;
   animation-fill-mode: forwards; }
+
+#article-div {
+  text-align: center; }
 
 #blog-print {
   border: 3px solid black;
@@ -286,6 +293,29 @@ aside {
 .hide {
   display: none; }
 
+#wyfy-intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+#wyfy-big {
+  border: none;
+  display: block; }
+
+#wyfy-logo {
+  border: none;
+  display: block;
+  margin-top: 100px;
+  width: 40%;
+  height: 40%; }
+
+#wyfy-logo:hover {
+  border: none;
+  display: block;
+  margin-top: 100px;
+  height: 40%;
+  width: 40%; }
+
 h1 {
   font-family: "Hind", sans-serif;
   text-align: center;
@@ -398,7 +428,7 @@ body {
   transition: .5s ease;
   max-width: 100%; }
 
-.project-pic:hover {
+.project-pic:not(.nohover):hover {
   opacity: 0.8;
   width: 1000px;
   height: 500px;
@@ -416,6 +446,12 @@ body {
 .gray-project-pic {
   float: right;
   margin-right: 100px; }
+
+.wyfy-project-pic {
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  display: block; }
 
 .pad {
   padding-left: 5%;
@@ -579,5 +615,8 @@ footer a {
     margin-top: 160px; }
   to {
     margin-top: 0px; } }
+blockquote {
+  font-size: 16px;
+  text-align: left; }
 
 /*# sourceMappingURL=styles.css.map */
