@@ -36,6 +36,7 @@ p {
     margin-left:100px;
 }
 
+
 @media only screen and (max-width: 600px) {
     .project-description {
         margin-left:0;
@@ -45,12 +46,12 @@ p {
     }
 }
 
+.wyfy-project-description{
+    display:block;
+    text-align:center;
+}
 
 
-// .gray-project-description{
-//     float:right;
-//     margin-right:100px;
-// }
 
 @media only screen and (max-width: 600px) {
     .ind-project img,
@@ -117,7 +118,7 @@ p {
 
 
 
-#puck-luck-deployed{
+.goto-project{
     font-family: $primaryFont;
     border:3px solid black;
     border-radius:7%;
@@ -128,19 +129,23 @@ p {
 }
 
 @media only screen and (max-width: 600px) {
-    #puck-luck-deployed{
+    .goto-project{
         display:inline-block;
         max-width: 175px;
         max-height: 30px;
     }
 }
 
-#puck-luck-deployed:hover{
+.goto-project:hover{
     animation-name: fadeblue;
     animation-duration: .5s;
     animation-fill-mode: forwards;
 }
 
+
+#article-div{
+    text-align:center;
+}
 
 #blog-print{
     border:3px solid black;
@@ -385,4 +390,36 @@ display:none;
 
 .hide{
     display:none;
+}
+
+#wyfy-intro{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+}
+
+#wyfy-big{
+    border:none;
+    display:block;
+}
+
+#wyfy-logo{
+    border:none;
+    display:block;
+    margin-top:100px;
+    width:40%;
+    height:40%;
+
+
+}
+
+
+#wyfy-logo:hover{
+    border:none;
+    display:block;
+    margin-top:100px;
+    height:40%;
+    width:40%;
+
+
 }

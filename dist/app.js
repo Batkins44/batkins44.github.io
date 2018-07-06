@@ -165,19 +165,30 @@ $( document ).ready(function() {
     }
 });
 
-$(".project-pic").hover(function(){
+$(".project-pic").hover(function(element){
+    if(element.target.className.includes('gif')){
+    $(this).attr("src", function(index, attr){
+        return attr.replace(".gif", "-hover.png");
+    });
+}else{
     $(this).attr("src", function(index, attr){
         return attr.replace(".png", "-hover.png");
     });
-}, function(){
+}
+}, function(element){
+    if(element.target.className.includes('gif')){
     $(this).attr("src", function(index, attr){
-        return attr.replace("-hover.png", ".png");
+        return attr.replace("-hover.png", ".gif");
     });
+    }else{
+        $(this).attr("src", function(index, attr){
+            return attr.replace("-hover.png", ".png");
+        });
+    }
 });
 
 $(".project-display-btns").click(function(element){
 if(lastClicked){
-    console.log("last cliked",lastClicked);
     $(`#${lastClicked}`).fadeOut(500);
 }
     console.log(element.target.id);
