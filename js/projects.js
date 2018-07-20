@@ -2,6 +2,8 @@
 
 let lastClicked;
 
+console.log(window.innerWidth);
+
 let puckLuck = `<div class="full-project" id='puck-luck-project'>
 
 <h2 class='project-title'>Puck-Luck</h2>
@@ -86,6 +88,7 @@ $( document ).ready(function() {
 });
 
 $(".project-pic").hover(function(element){
+    
     if(element.target.className.includes('gif')){
     $(this).attr("src", function(index, attr){
         return attr.replace(".gif", "-hover.png");

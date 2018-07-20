@@ -30,15 +30,14 @@ p {
     }
 }
 
-.project-description,
-.gray-project-description{
+.project-description{
     display:block;
-    margin-left:100px;
+    text-align:center;
 }
 
 
 @media only screen and (max-width: 600px) {
-    .project-description {
+    .project-description{
         margin-left:0;
         float:none;
         text-align:center;
@@ -46,25 +45,20 @@ p {
     }
 }
 
-.wyfy-project-description{
-    display:block;
-    text-align:center;
-}
-
 
 
 @media only screen and (max-width: 600px) {
-    .ind-project img,
-    .gray-project img {
-        display:inline-block;
-        float:none;
+    .ind-project img:not(.wyfy-project-pic),
+    .gray-project img:not(.wyfy-project-pic) {
         width:275px;
         height:150px;
         margin:0;
         padding:0;
-        text-align:center;
-    }
+        margin-left:auto;
+        margin-right:auto;
+        display:block;    }
 }
+
 .ind-project{
     clear:both;
     display:block;
@@ -97,7 +91,6 @@ p {
     .ind-project h3,
     .gray-project h3 {
         display:inline-block;
-        width:150px;
         text-align:center;
         margin:0;
         padding:0;
@@ -126,6 +119,8 @@ p {
     background-color:black;
     text-decoration:none;
     padding:5px;
+    display:inline-block;
+    margin-bottom:20px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -397,6 +392,15 @@ display:none;
     flex-direction:row;
     justify-content: space-around;
 }
+
+@media only screen and (max-width: 600px) {
+    #wyfy-intro{
+        display:block;
+        flex-direction:column;
+    }
+}
+
+
 
 #wyfy-big{
     border:none;
