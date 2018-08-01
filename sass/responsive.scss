@@ -171,7 +171,9 @@ p {
 
 .portrait{
     display:block;
-    float:left;
+    margin-right:30px;
+    margin-bottom:30px;
+    // float:left;
     // margin-left: auto;
     // margin-right: auto;
     box-shadow: 3px 3px 1px grey;
@@ -179,16 +181,16 @@ p {
     border: 3px solid black;
 }
 
-@media only screen and (max-width: 600px) {
-    .portrait {
-        display:inline-block;
-        text-align:center;
-        float:none;
-        border:none;
-        // width:330px;
-        // height:500px;
-    }
-}
+// @media only screen and (max-width: 600px) {
+//     .portrait {
+//         display:inline-block;
+//         text-align:center;
+//         float:none;
+//         border:none;
+//         // width:330px;
+//         // height:500px;
+//     }
+// }
 
 .index-main{
     padding-left:150px;
@@ -211,15 +213,15 @@ p {
     
 }
 
-@media only screen and (max-width: 600px) {
-    .bout-me {
-        float:none;
-        max-width: 100%;
-        margin-left: 10px;
-        margin-right: 10px;
-        border:none;
-    }
-}
+// @media only screen and (max-width: 600px) {
+//     .bout-me {
+//         float:none;
+//         max-width: 100%;
+//         margin-left: 10px;
+//         margin-right: 10px;
+//         border:none;
+//     }
+// }
 
 .bout-me:hover{
     animation-name: fadeblack;
@@ -426,4 +428,10 @@ display:none;
     width:40%;
 
 
+}
+
+#about-flex{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
 }
