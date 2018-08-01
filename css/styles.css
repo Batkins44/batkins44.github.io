@@ -152,20 +152,13 @@ p {
 }
 .portrait {
   display: block;
-  float: left;
+  margin-right: 30px;
+  margin-bottom: 30px;
   box-shadow: 3px 3px 1px grey;
   border-radius: 3%;
   border: 3px solid black;
 }
 
-@media only screen and (max-width: 600px) {
-  .portrait {
-    display: inline-block;
-    text-align: center;
-    float: none;
-    border: none;
-  }
-}
 .index-main {
   padding-left: 150px;
   padding-right: 150px;
@@ -185,15 +178,6 @@ p {
   max-width: 60%;
 }
 
-@media only screen and (max-width: 600px) {
-  .bout-me {
-    float: none;
-    max-width: 100%;
-    margin-left: 10px;
-    margin-right: 10px;
-    border: none;
-  }
-}
 .bout-me:hover {
   animation-name: fadeblack;
   animation-duration: 0.5s;
@@ -388,6 +372,12 @@ aside {
   margin-top: 100px;
   height: 40%;
   width: 40%;
+}
+
+#about-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 h1 {
