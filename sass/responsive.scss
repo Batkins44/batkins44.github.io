@@ -67,17 +67,19 @@ p {
     height:auto;
     padding-top:50px;
     padding-bottom:50px;
+    border-bottom:5px solid darkgray
+
 }
 
 .gray-project{
     display:block;
-    background:linear-gradient(lightblue, darkgray 5%,lightblue 95%);
     overflow:auto;
     margin:auto; 
     height:auto;
     clear: both;
     padding-top:50px;
     padding-bottom:50px;
+    border-bottom:5px solid darkgray
 }
 
 @media only screen and (max-width: 600px) {
@@ -340,7 +342,7 @@ aside{
 .project-display-btns{
     font-family: $primaryFont;
     border:3px solid black;
-    border-radius:7%;
+    border-radius:4px;
     color:lightblue;
     background-color:black;
     text-decoration:none;
