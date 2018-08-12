@@ -110,7 +110,7 @@ $(".project-pic").hover(function(element){
     }
 });
 
-$(".project-display-btns").click(function(element){
+$(".project-display-box").click(function(element){
 if(lastClicked){
     $(`#${lastClicked}`).fadeOut(500);
 }
@@ -120,8 +120,21 @@ if(lastClicked){
     console.log(projectName);
     console.log(projectID);
     $(`#${projectID}`).fadeIn(1000);
+    $('#to-top').removeClass('is-hidden');
 
 
 lastClicked = projectID;
 
+});
+
+$(".project-display-box").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#project-body").offset().top
+    }, 2000);
+});
+
+$("#to-top").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#slide4").offset().top
+    }, 2000);
 });
