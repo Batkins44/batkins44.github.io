@@ -173,7 +173,6 @@ p {
 
 .portrait{
     display:block;
-    margin-right:30px;
     margin-bottom:30px;
     // float:left;
     // margin-left: auto;
@@ -213,6 +212,13 @@ p {
     float:right;
     max-width:60%;
     
+}
+
+@media only screen and (max-width: 600px) {
+    .bout-me {
+    max-width:85%;
+    border:none;
+    }
 }
 
 // @media only screen and (max-width: 600px) {
