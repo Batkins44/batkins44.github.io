@@ -153,7 +153,6 @@ p {
 }
 .portrait {
   display: block;
-  margin-right: 30px;
   margin-bottom: 30px;
   box-shadow: 3px 3px 1px grey;
   border-radius: 3%;
@@ -179,6 +178,12 @@ p {
   max-width: 60%;
 }
 
+@media only screen and (max-width: 600px) {
+  .bout-me {
+    max-width: 85%;
+    border: none;
+  }
+}
 .bout-me:hover {
   animation-name: fadeblack;
   animation-duration: 0.5s;
@@ -553,6 +558,7 @@ body {
   background: url("../images/ep_naturalblack.png") repeat 0 0;
   background-attachment: fixed;
   padding-bottom: 30px;
+  width: 100%;
 }
 
 .hover-notice {
