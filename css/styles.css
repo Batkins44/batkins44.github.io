@@ -263,9 +263,10 @@ aside {
     max-height: 250px;
     background-size: contain; } }
 .project-display-btns:hover {
-  animation-name: fadeblue;
-  animation-duration: .5s;
-  animation-fill-mode: forwards; }
+  animation-name: grow;
+  animation-duration: .2s;
+  animation-fill-mode: forwards;
+  cursor: pointer; }
 
 #slide1 {
   display: none; }
@@ -347,6 +348,14 @@ aside {
   text-align: center;
   box-shadow: 2px 2px 3px #999; }
 
+.code {
+  color: orangered; }
+
+@keyframes grow {
+  from {
+    box-shadow: none; }
+  to {
+    box-shadow: 4px 4px 4px 4px #999; } }
 h1 {
   font-family: "Hind", sans-serif;
   text-align: center;
