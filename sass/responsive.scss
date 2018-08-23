@@ -180,6 +180,8 @@ p {
     box-shadow: 3px 3px 1px grey;
     border-radius:3%;
     border: 3px solid black;
+    margin-left:20px;
+    margin-right:20px;
 }
 
 // @media only screen and (max-width: 600px) {
@@ -367,9 +369,10 @@ aside{
 }
 
 .project-display-btns:hover{
-    animation-name: fadeblue;
-    animation-duration: .5s;
+    animation-name: grow;
+    animation-duration: .2s;
     animation-fill-mode: forwards;
+    cursor: pointer;
 }
 
 
@@ -489,4 +492,18 @@ align-content:space-around;
 	border-radius:7px;
 	text-align:center;
 	box-shadow: 2px 2px 3px #999;
+}
+
+.code{
+    color:orangered;
+}
+
+@keyframes grow{
+    from{
+        box-shadow: none;
+    }
+    to {
+        box-shadow: 4px 4px 4px 4px #999;
+    
+    }
 }
