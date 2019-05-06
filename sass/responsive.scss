@@ -182,6 +182,7 @@ p {
     border: 3px solid black;
     margin-left:20px;
     margin-right:20px;
+
 }
 
 // @media only screen and (max-width: 600px) {
@@ -239,8 +240,17 @@ p {
     animation-fill-mode: forwards;
 }
 .bout-me p{
-    font-size:16px;
+    font-size:18px;
+    font-family: $primaryFont;
+    line-height: 1.7;
     
+}
+
+
+@media only screen and (max-width: 1522px) {
+    .bout-me p {
+    font-size: 16px;
+    }
 }
 
 aside{
@@ -356,6 +366,7 @@ aside{
     text-decoration:none;
     margin-left:15px;
     margin-right:15px;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
 }
 
 @media only screen and (max-width: 600px) {
