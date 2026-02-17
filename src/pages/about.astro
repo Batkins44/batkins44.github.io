@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About"
+  description="Who Ben Atkins is — IT by day, curious about everything else."
+>
+  <header class="mb-12">
+    <h1
+      class="text-4xl font-bold mb-3"
+      style="font-family: var(--font-display); color: var(--color-heading);"
+    >
+      About
+    </h1>
+    <p style="color: var(--color-muted);">The longer version.</p>
+  </header>
+
+  <div class="flex flex-col gap-10" style="color: var(--color-body);">
+
+    <section>
+      <h2
+        class="text-xs font-medium uppercase tracking-widest mb-4"
+        style="color: var(--color-muted);"
+      >
+        The Work
+      </h2>
+      <p class="leading-relaxed mb-3">
+        I do IT Support and SysAdmin work — the kind of job where something is always slightly on
+        fire and you're equal parts problem-solver, translator between humans and machines, and
+        occasional fire extinguisher. I genuinely like it.
+      </p>
+      <p class="leading-relaxed">
+        What I care about most in that space is optimization. Not in a "let me spend three weeks
+        automating a five-minute task" way (okay, sometimes), but in the sense that systems
+        should work well, processes shouldn't be painful, and there's usually a better way if
+        you look for it.
+      </p>
+    </section>
+
+    <section>
+      <h2
+        class="text-xs font-medium uppercase tracking-widest mb-4"
+        style="color: var(--color-muted);"
+      >
+        The Interests
+      </h2>
+      <p class="leading-relaxed mb-3">
+        Game design — not as a job (yet), but as a genuine fixation. I think about player
+        motivation, feedback loops, what makes a system feel fair or rewarding, how rules create
+        meaning. I play games partly to enjoy them and partly to take them apart and see how they
+        work.
+      </p>
+      <p class="leading-relaxed mb-3">
+        Fantasy sports: NFL and NHL, in that order of chaos. At some point "fun hobby" became
+        "I have spreadsheets for this and I'm not apologizing."
+      </p>
+      <p class="leading-relaxed mb-3">
+        Indie music — the kind that feels like it was made in a room, not a formula. I like
+        things that sound like they cost the artist something to make.
+      </p>
+      <p class="leading-relaxed">
+        Psychology, as a lens on everything else. It snuck into how I think about game design,
+        how I approach support work, how I understand why people do what they do.
+      </p>
+    </section>
+
+    <section>
+      <h2
+        class="text-xs font-medium uppercase tracking-widest mb-4"
+        style="color: var(--color-muted);"
+      >
+        The Background
+      </h2>
+      <p class="leading-relaxed mb-3">
+        Psychology and Business degree. Nashville Software School alumni — I went through a
+        full-stack bootcamp back in 2017, which is where I learned to build things on the web.
+        That led to some dev work, which eventually wound into the IT and systems world where
+        I've settled.
+      </p>
+      <p class="leading-relaxed">
+        I've lived in Nashville and Denver. Currently somewhere in between, depending on when
+        you're reading this.
+      </p>
+    </section>
+
+    <section class="pt-2 border-t border-[#2a2a2a]">
+      <div class="flex gap-5 text-sm" style="color: var(--color-muted);">
+        <a
+          href="https://github.com/Batkins44"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-[#a78bfa] transition-colors duration-200"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://www.linkedin.com/in/batkins44"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-[#a78bfa] transition-colors duration-200"
+        >
+          LinkedIn
+        </a>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

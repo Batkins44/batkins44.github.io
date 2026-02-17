@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const lastUpdated = 'February 2026';
+---
+
+<BaseLayout
+  title="Now"
+  description="What Ben Atkins is currently playing, watching, and thinking about."
+>
+  <header class="mb-10">
+    <h1
+      class="text-4xl font-bold mb-3"
+      style="font-family: var(--font-display); color: var(--color-heading);"
+    >
+      Now
+    </h1>
+    <p class="text-sm" style="color: var(--color-muted);">
+      Last updated: {lastUpdated} &mdash;{' '}
+      <a
+        href="https://nownownow.com/about"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-[#a78bfa] transition-colors duration-200 underline"
+      >
+        what's a now page?
+      </a>
+    </p>
+  </header>
+
+  <div class="flex flex-col gap-10" style="color: var(--color-body);">
+
+    <section>
+      <h2
+        class="text-xs font-medium uppercase tracking-widest mb-4"
+        style="color: var(--color-muted);"
+      >
+        Playing
+      </h2>
+      <p class="leading-relaxed">
+        Update this with whatever you're currently playing. This page is meant to be kept fresh — edit
+        <code class="text-xs bg-[#1a1a1a] px-1.5 py-0.5 rounded" style="font-family: var(--font-mono); color: var(--color-accent-light);">src/pages/now.astro</code>
+        whenever things change.
+      </p>
+    </section>
+
+    <section>
+      <h2
+        class="text-xs font-medium uppercase tracking-widest mb-4"
+        style="color: var(--color-muted);"
+      >
+        Watching
+      </h2>
+      <p class="leading-relaxed">
+        What's in the rotation right now — shows, films, whatever.
+      </p>
+    </section>
+
+    <section>
+      <h2
+        class="text-xs font-medium uppercase tracking-widest mb-4"
+        style="color: var(--color-muted);"
+      >
+        Working On
+      </h2>
+      <p class="leading-relaxed">
+        This site. Just rebuilt it from scratch because the 2017 version was embarrassing.
+        Up next: actually writing things for it.
+      </p>
+    </section>
+
+    <section>
+      <h2
+        class="text-xs font-medium uppercase tracking-widest mb-4"
+        style="color: var(--color-muted);"
+      >
+        Fantasy Sports
+      </h2>
+      <p class="leading-relaxed">
+        NHL season is live. NFL is in the offseason — which means mock drafts and regret
+        about last year's picks have already started.
+      </p>
+    </section>
+
+    <section>
+      <h2
+        class="text-xs font-medium uppercase tracking-widest mb-4"
+        style="color: var(--color-muted);"
+      >
+        Listening
+      </h2>
+      <p class="leading-relaxed">
+        Update this with what's been on heavy rotation lately.
+      </p>
+    </section>
+
+  </div>
+</BaseLayout>

@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Replace YOUR_FORM_ID with your actual Formspree form ID after signing up at formspree.io
+const formspreeId = 'xqedbrqr';
+---
+
+<BaseLayout
+  title="Contact"
+  description="Get in touch with Ben Atkins."
+>
+  <header class="mb-10">
+    <h1
+      class="text-4xl font-bold mb-3"
+      style="font-family: var(--font-display); color: var(--color-heading);"
+    >
+      Contact
+    </h1>
+    <p style="color: var(--color-muted);">
+      I don't bite. Talk game design, fantasy sports, IT stuff, or whatever.
+    </p>
+  </header>
+
+  <form
+    action={`https://formspree.io/f/${formspreeId}`}
+    method="POST"
+    class="flex flex-col gap-5 mb-12"
+  >
+    <div class="flex flex-col gap-1.5">
+      <label
+        for="name"
+        class="text-xs font-medium uppercase tracking-widest"
+        style="color: var(--color-muted);"
+      >
+        Name
+      </label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        placeholder="Your name"
+        class="w-full rounded-lg px-4 py-3 text-sm border border-[#2a2a2a] bg-[#1a1a1a] focus:outline-none focus:border-[#7c3aed] transition-colors duration-200"
+        style="color: var(--color-body);"
+      />
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+      <label
+        for="email"
+        class="text-xs font-medium uppercase tracking-widest"
+        style="color: var(--color-muted);"
+      >
+        Email
+      </label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="your@email.com"
+        class="w-full rounded-lg px-4 py-3 text-sm border border-[#2a2a2a] bg-[#1a1a1a] focus:outline-none focus:border-[#7c3aed] transition-colors duration-200"
+        style="color: var(--color-body);"
+      />
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+      <label
+        for="message"
+        class="text-xs font-medium uppercase tracking-widest"
+        style="color: var(--color-muted);"
+      >
+        Message
+      </label>
+      <textarea
+        id="message"
+        name="message"
+        required
+        rows="6"
+        placeholder="What's on your mind?"
+        class="w-full rounded-lg px-4 py-3 text-sm border border-[#2a2a2a] bg-[#1a1a1a] focus:outline-none focus:border-[#7c3aed] transition-colors duration-200 resize-y"
+        style="color: var(--color-body);"
+      ></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="self-start px-6 py-3 rounded-lg text-sm font-medium text-white transition-colors duration-200 cursor-pointer"
+      style="background-color: var(--color-accent);"
+      onmouseover="this.style.backgroundColor='#6d28d9'"
+      onmouseout="this.style.backgroundColor='var(--color-accent)'"
+    >
+      Send it
+    </button>
+  </form>
+
+  <div class="pt-6 border-t border-[#2a2a2a]">
+    <p class="text-sm mb-4" style="color: var(--color-muted);">Also here:</p>
+    <div class="flex gap-5 text-sm">
+      <a
+        href="https://github.com/Batkins44"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-[#a78bfa] transition-colors duration-200"
+        style="color: var(--color-muted);"
+      >
+        GitHub
+      </a>
+      <a
+        href="https://www.linkedin.com/in/batkins44"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-[#a78bfa] transition-colors duration-200"
+        style="color: var(--color-muted);"
+      >
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</BaseLayout>

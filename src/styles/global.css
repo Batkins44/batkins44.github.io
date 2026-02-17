@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg:           #111111;
+  --color-surface:      #1a1a1a;
+  --color-border:       #2a2a2a;
+  --color-muted:        #6b7280;
+  --color-body:         #d1d5db;
+  --color-heading:      #f5f5f5;
+  --color-accent:       #7c3aed;
+  --color-accent-light: #a78bfa;
+
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+}
+
+html {
+  background-color: var(--color-bg);
+  color: var(--color-body);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--color-heading);
+  line-height: 1.2;
+}
+
+a {
+  transition: color 0.2s ease;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+/* Blog post prose styles */
+.prose-content {
+  color: var(--color-body);
+  line-height: 1.8;
+}
+.prose-content h2 {
+  font-family: var(--font-display);
+  color: var(--color-heading);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.prose-content h3 {
+  font-family: var(--font-display);
+  color: var(--color-heading);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.prose-content p {
+  margin-bottom: 1.25rem;
+}
+.prose-content a {
+  color: var(--color-accent-light);
+  text-decoration: underline;
+}
+.prose-content a:hover {
+  color: var(--color-accent);
+}
+.prose-content code {
+  font-family: var(--font-mono);
+  background: #1a1a1a;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+.prose-content pre {
+  background: #1a1a1a;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+}
+.prose-content pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.9em;
+}
+.prose-content blockquote {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1rem;
+  color: var(--color-muted);
+  font-style: italic;
+  margin: 1.5rem 0;
+}
+.prose-content ul,
+.prose-content ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.prose-content li {
+  margin-bottom: 0.4rem;
+}
+.prose-content hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 2rem 0;
+}
+.prose-content strong {
+  color: var(--color-heading);
+  font-weight: 600;
+}

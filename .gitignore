@@ -1,5 +1,5 @@
 .DS_Store
 .vscode/
-lib/.sass-cache
-lib/node_modules
-lib/package-lock.json
+node_modules/
+dist/
+.astro/
