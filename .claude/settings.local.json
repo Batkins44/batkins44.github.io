@@ -6,7 +6,13 @@
       "Bash(cmd.exe:*)",
       "Bash(cmd.exe /c \"where node\")",
       "Bash(powershell.exe -Command \"Get-Command npm -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source; Get-Command node -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
-      "Bash(powershell.exe:*)"
+      "Bash(powershell.exe:*)",
+      "WebFetch(domain:www.themoviedb.org)",
+      "WebFetch(domain:musicbrainz.org)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:coverartarchive.org)",
+      "Bash(curl:*)",
+      "Bash(ls:*)"
     ]
   }
 }

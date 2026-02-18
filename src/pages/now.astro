@@ -2,6 +2,28 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const lastUpdated = 'February 2026';
+
+const games = [
+  { name: 'Arc Raiders',   img: '/images/now/arc-raiders.jpg',   note: 'still deep in this one' },
+  { name: 'Silksong',      img: '/images/now/silksong.jpg',      note: 'the wait is finally over' },
+  { name: 'Rocket League', img: '/images/now/rocket-league.jpg', note: 'the eternal rotation' },
+  { name: 'The First Berserker: Khazan', img: '/images/now/khazan.jpg', note: '' },
+  { name: 'Brotato',       img: '/images/now/brotato.jpg',       note: 'perfect between-games game' },
+];
+
+const shows = [
+  { name: 'One Battle After Another', img: '/images/now/one-battle.jpg' },
+  { name: 'Pluribus',                 img: '/images/now/pluribus.jpg' },
+  { name: 'Fallout',                  img: '/images/now/fallout.jpg' },
+  { name: 'What We Do in the Shadows', img: '/images/now/wwdits.jpg' },
+];
+
+const artists = [
+  { name: 'Washed Out', color: '#c4b5fd' },
+  { name: 'Panda Bear', color: '#a78bfa' },
+  { name: 'MF DOOM',    color: '#8b5cf6' },
+  { name: 'Gorillaz',   color: '#7c3aed' },
+];
 ---
 
 <BaseLayout
@@ -28,55 +50,96 @@ const lastUpdated = 'February 2026';
     </p>
   </header>
 
-  <div class="flex flex-col gap-6" style="color: var(--color-body);">
+  <div class="flex flex-col gap-8" style="color: var(--color-body);">
 
     <!-- Playing -->
-    <section class="border border-[#2a2a2a] rounded-lg p-6 bg-[#1a1a1a]">
+    <section>
       <h2
         class="text-xs font-medium uppercase tracking-widest mb-4 flex items-center gap-2"
         style="color: var(--color-muted);"
       >
         <span class="text-lg">🎮</span> Playing
       </h2>
-      <ul class="flex flex-col gap-2">
-        <li class="leading-relaxed"><strong class="text-[#a78bfa]">Arc Raiders</strong> <span class="text-[#6b7280]">— still deep in this one</span></li>
-        <li class="leading-relaxed"><strong class="text-[#a78bfa]">Silksong</strong> <span class="text-[#6b7280]">— the wait is finally over</span></li>
-        <li class="leading-relaxed"><strong class="text-[#a78bfa]">Rocket League</strong> <span class="text-[#6b7280]">— the eternal rotation</span></li>
-        <li class="leading-relaxed"><strong class="text-[#a78bfa]">The First Berserker: Khazan</strong></li>
-        <li class="leading-relaxed"><strong class="text-[#a78bfa]">Brotato</strong> <span class="text-[#6b7280]">— perfect between-games game</span></li>
-      </ul>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        {games.map(game => (
+          <div class="group relative overflow-hidden rounded-lg border border-[#2a2a2a] hover:border-[#7c3aed] transition-all duration-300">
+            <img
+              src={game.img}
+              alt={game.name}
+              class="w-full aspect-[460/215] object-cover group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-3">
+              <p
+                class="text-sm font-semibold text-white leading-tight"
+                style="font-family: var(--font-display);"
+              >
+                {game.name}
+              </p>
+              {game.note && (
+                <p class="text-xs mt-0.5 text-[#a78bfa]">{game.note}</p>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
 
     <!-- Watching -->
-    <section class="border border-[#2a2a2a] rounded-lg p-6 bg-[#1a1a1a]">
+    <section>
       <h2
         class="text-xs font-medium uppercase tracking-widest mb-4 flex items-center gap-2"
         style="color: var(--color-muted);"
       >
         <span class="text-lg">📺</span> Watching
       </h2>
-      <ul class="flex flex-col gap-2">
-        <li class="leading-relaxed"><strong class="text-[#a78bfa]">One Battle After Another</strong></li>
-        <li class="leading-relaxed"><strong class="text-[#a78bfa]">Pluribus</strong></li>
-        <li class="leading-relaxed"><strong class="text-[#a78bfa]">Fallout</strong></li>
-        <li class="leading-relaxed"><strong class="text-[#a78bfa]">What We Do in the Shadows</strong></li>
-      </ul>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        {shows.map(show => (
+          <div class="group relative overflow-hidden rounded-lg border border-[#2a2a2a] hover:border-[#7c3aed] transition-all duration-300">
+            <img
+              src={show.img}
+              alt={show.name}
+              class="w-full aspect-[2/3] object-cover group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-3">
+              <p
+                class="text-sm font-semibold text-white leading-tight"
+                style="font-family: var(--font-display);"
+              >
+                {show.name}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
 
     <!-- Listening -->
-    <section class="border border-[#2a2a2a] rounded-lg p-6 bg-[#1a1a1a]">
+    <section>
       <h2
         class="text-xs font-medium uppercase tracking-widest mb-4 flex items-center gap-2"
         style="color: var(--color-muted);"
       >
         <span class="text-lg">🎧</span> Listening
       </h2>
-      <ul class="flex flex-col gap-2">
-        <li class="leading-relaxed"><strong class="text-[#a78bfa]">Washed Out</strong></li>
-        <li class="leading-relaxed"><strong class="text-[#a78bfa]">Panda Bear</strong></li>
-        <li class="leading-relaxed"><strong class="text-[#a78bfa]">MF DOOM</strong></li>
-        <li class="leading-relaxed"><strong class="text-[#a78bfa]">Gorillaz</strong></li>
-      </ul>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        {artists.map(artist => (
+          <div
+            class="rounded-lg border border-[#2a2a2a] p-5 flex items-center justify-center text-center hover:border-[#7c3aed] transition-all duration-300"
+            style={`background: linear-gradient(135deg, #1a1a1a 0%, ${artist.color}15 100%);`}
+          >
+            <p
+              class="text-sm font-bold"
+              style={`font-family: var(--font-display); color: ${artist.color};`}
+            >
+              {artist.name}
+            </p>
+          </div>
+        ))}
+      </div>
     </section>
 
     <!-- Working On -->
