@@ -15,14 +15,14 @@ const shows = [
   { name: 'One Battle After Another', img: '/images/now/one-battle.jpg' },
   { name: 'Pluribus',                 img: '/images/now/pluribus.jpg' },
   { name: 'Fallout',                  img: '/images/now/fallout.jpg' },
-  { name: 'What We Do in the Shadows', img: '/images/now/wwdits.jpg' },
+  { name: 'What We Do in the Shadows', img: '/images/now/wwdits.png' },
 ];
 
 const artists = [
-  { name: 'Washed Out', color: '#c4b5fd' },
-  { name: 'Panda Bear', color: '#a78bfa' },
-  { name: 'MF DOOM',    color: '#8b5cf6' },
-  { name: 'Gorillaz',   color: '#7c3aed' },
+  { name: 'Washed Out', img: '/images/now/washed-out.png' },
+  { name: 'Panda Bear', img: '/images/now/panda-bear.png' },
+  { name: 'MF DOOM',    img: '/images/now/mf-doom.png' },
+  { name: 'Gorillaz',   img: '/images/now/gorillaz.png' },
 ];
 ---
 
@@ -127,16 +127,22 @@ const artists = [
       </h2>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {artists.map(artist => (
-          <div
-            class="rounded-lg border border-[#2a2a2a] p-5 flex items-center justify-center text-center hover:border-[#7c3aed] transition-all duration-300"
-            style={`background: linear-gradient(135deg, #1a1a1a 0%, ${artist.color}15 100%);`}
-          >
-            <p
-              class="text-sm font-bold"
-              style={`font-family: var(--font-display); color: ${artist.color};`}
-            >
-              {artist.name}
-            </p>
+          <div class="group relative overflow-hidden rounded-lg border border-[#2a2a2a] hover:border-[#7c3aed] transition-all duration-300">
+            <img
+              src={artist.img}
+              alt={artist.name}
+              class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-3">
+              <p
+                class="text-sm font-semibold text-white leading-tight"
+                style="font-family: var(--font-display);"
+              >
+                {artist.name}
+              </p>
+            </div>
           </div>
         ))}
       </div>
