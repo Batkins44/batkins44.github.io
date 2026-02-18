@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const skills = [
+  { category: 'Infrastructure', items: ['Active Directory / Entra', 'Microsoft 365 / Azure', 'Windows Server', 'Networking'] },
+  { category: 'Operations', items: ['User Lifecycle Management', 'IT Asset Management', 'Ticketing Systems (FreshService)', 'IT Compliance & Auditing'] },
+  { category: 'Technical', items: ['PowerShell / Automation', 'Hardware Deployment & Imaging', 'Email Security & Compliance', 'Technical Documentation'] },
+  { category: 'Other', items: ['Front-End Web Development', 'Applied AI for IT Ops', 'SOC 2 Audit Coordination', 'Cross-functional Communication'] },
+];
+---
+
+<BaseLayout
+  title="Career"
+  description="Ben Atkins — IT Support professional with 6+ years of enterprise experience."
+>
+  <header class="mb-12">
+    <h1
+      class="text-4xl font-bold mb-3"
+      style="font-family: var(--font-display); color: var(--color-heading);"
+    >
+      Career
+    </h1>
+    <p style="color: var(--color-muted);">
+      6+ years in enterprise IT across healthcare and financial sectors.
+    </p>
+  </header>
+
+  <div class="flex flex-col gap-10" style="color: var(--color-body);">
+
+    <!-- Overview -->
+    <section>
+      <p class="text-lg leading-relaxed mb-4">
+        I've spent the last six years doing IT support and sysadmin work at places where
+        things can't break — a medical center and a multi-site financial firm. The work
+        ranges from hands-on troubleshooting to building out onboarding systems to keeping
+        auditors happy.
+      </p>
+      <p class="leading-relaxed" style="color: var(--color-muted);">
+        What I care about most: making systems work well, cutting out inefficiency, and
+        communicating clearly with people who aren't technical. I'm currently looking for my
+        next role —
+        <a href="/contact" class="text-[#a78bfa] underline hover:text-[#7c3aed] transition-colors duration-200">reach out</a>
+        if you've got something.
+      </p>
+    </section>
+
+    <!-- Experience -->
+    <section>
+      <h2
+        class="text-xs font-medium uppercase tracking-widest mb-6"
+        style="color: var(--color-muted);"
+      >
+        Experience
+      </h2>
+
+      <div class="flex flex-col gap-6">
+
+        <!-- LBMC -->
+        <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#1a1a1a]">
+          <div class="flex items-start justify-between flex-wrap gap-2 mb-4">
+            <div>
+              <h3
+                class="text-lg font-semibold"
+                style="font-family: var(--font-display); color: var(--color-heading);"
+              >
+                Service Desk Specialist → Senior Specialist
+              </h3>
+              <p class="text-sm" style="color: var(--color-accent-light);">LBMC</p>
+            </div>
+            <span
+              class="text-xs font-medium px-2.5 py-1 rounded-full bg-[#2a2a2a] whitespace-nowrap"
+              style="color: var(--color-muted);"
+            >
+              2021 – 2025
+            </span>
+          </div>
+          <ul class="flex flex-col gap-3 text-sm">
+            <li class="leading-relaxed pl-4 border-l-2 border-[#2a2a2a]">
+              <strong style="color: var(--color-heading);">Tier 1/2 support</strong> for a multi-site tax firm — 5 regional offices plus
+              overseas contractors. Windows, O365, accounting software, access management, networking,
+              hardware, AV systems. All routed through FreshService.
+            </li>
+            <li class="leading-relaxed pl-4 border-l-2 border-[#2a2a2a]">
+              <strong style="color: var(--color-heading);">Built end-to-end onboarding workflows</strong> across all LBMC companies — AD provisioning,
+              security groups, hardware imaging, license procurement, badge integration. Coordinated
+              with HR and department leads.
+            </li>
+            <li class="leading-relaxed pl-4 border-l-2 border-[#2a2a2a]">
+              <strong style="color: var(--color-heading);">SOC 2 audit coordination</strong> — collected and organized audit evidence, documented
+              offboarding procedures (AD revocation, license reclamation, badge deactivation).
+              100% on-time delivery to external auditors.
+            </li>
+            <li class="leading-relaxed pl-4 border-l-2 border-[#2a2a2a]">
+              <strong style="color: var(--color-heading);">Monthly license audits</strong> that identified unused or redundant subscriptions across
+              the org — drove real cost savings while maintaining compliance.
+            </li>
+            <li class="leading-relaxed pl-4 border-l-2 border-[#2a2a2a]">
+              <strong style="color: var(--color-heading);">Managed the service desk</strong> — distributed tickets, mentored team members on
+              escalations, maintained &lt;1 hour response SLA across all queues.
+            </li>
+            <li class="leading-relaxed pl-4 border-l-2 border-[#2a2a2a]">
+              <strong style="color: var(--color-heading);">Built an IT onboarding program</strong> for international contractors — led orientation
+              sessions on environment architecture, security protocols, auth procedures.
+            </li>
+          </ul>
+        </div>
+
+        <!-- VUMC -->
+        <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#1a1a1a]">
+          <div class="flex items-start justify-between flex-wrap gap-2 mb-4">
+            <div>
+              <h3
+                class="text-lg font-semibold"
+                style="font-family: var(--font-display); color: var(--color-heading);"
+              >
+                Field Project Technician
+              </h3>
+              <p class="text-sm" style="color: var(--color-accent-light);">Vanderbilt University Medical Center</p>
+            </div>
+            <span
+              class="text-xs font-medium px-2.5 py-1 rounded-full bg-[#2a2a2a] whitespace-nowrap"
+              style="color: var(--color-muted);"
+            >
+              2018 – 2020
+            </span>
+          </div>
+          <ul class="flex flex-col gap-3 text-sm">
+            <li class="leading-relaxed pl-4 border-l-2 border-[#2a2a2a]">
+              <strong style="color: var(--color-heading);">Field support across VUMC's main campus and clinics</strong> throughout Middle
+              Tennessee — resolved end-user issues while keeping healthcare IT operations running.
+            </li>
+            <li class="leading-relaxed pl-4 border-l-2 border-[#2a2a2a]">
+              <strong style="color: var(--color-heading);">Led post-migration O365 support</strong> — troubleshooting, documentation, and
+              escalation management for clinical and administrative staff.
+            </li>
+            <li class="leading-relaxed pl-4 border-l-2 border-[#2a2a2a]">
+              <strong style="color: var(--color-heading);">Deployed clinical workstations</strong> via PowerShell scripting for AD integration.
+              Used Pegasus, Active Directory, and Tolero for asset tracking and KACE compliance.
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section>
+      <h2
+        class="text-xs font-medium uppercase tracking-widest mb-6"
+        style="color: var(--color-muted);"
+      >
+        Skills
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {skills.map(group => (
+          <div class="border border-[#2a2a2a] rounded-lg p-5 bg-[#1a1a1a]">
+            <h3
+              class="text-xs font-medium uppercase tracking-widest mb-3"
+              style="color: var(--color-accent-light); font-family: var(--font-display);"
+            >
+              {group.category}
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              {group.items.map(skill => (
+                <span class="text-xs px-2.5 py-1 rounded-full bg-[#2a2a2a] text-[#d1d5db] font-medium">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h2
+        class="text-xs font-medium uppercase tracking-widest mb-6"
+        style="color: var(--color-muted);"
+      >
+        Education
+      </h2>
+      <div class="flex flex-col gap-4">
+
+        <div class="border border-[#2a2a2a] rounded-lg p-5 bg-[#1a1a1a]">
+          <div class="flex items-start justify-between flex-wrap gap-2">
+            <div>
+              <h3
+                class="text-base font-semibold"
+                style="font-family: var(--font-display); color: var(--color-heading);"
+              >
+                Nashville Software School
+              </h3>
+              <p class="text-sm" style="color: var(--color-accent-light);">Front-End Web Development</p>
+            </div>
+            <span
+              class="text-xs font-medium px-2.5 py-1 rounded-full bg-[#2a2a2a] whitespace-nowrap"
+              style="color: var(--color-muted);"
+            >
+              2018
+            </span>
+          </div>
+          <p class="text-sm mt-2" style="color: var(--color-muted);">
+            Intensive full-time program — HTML, CSS, JavaScript, React, jQuery.
+          </p>
+        </div>
+
+        <div class="border border-[#2a2a2a] rounded-lg p-5 bg-[#1a1a1a]">
+          <div class="flex items-start justify-between flex-wrap gap-2">
+            <div>
+              <h3
+                class="text-base font-semibold"
+                style="font-family: var(--font-display); color: var(--color-heading);"
+              >
+                University of Tennessee
+              </h3>
+              <p class="text-sm" style="color: var(--color-accent-light);">B.A. Psychology · Minor in Business Administration</p>
+            </div>
+            <span
+              class="text-xs font-medium px-2.5 py-1 rounded-full bg-[#2a2a2a] whitespace-nowrap"
+              style="color: var(--color-muted);"
+            >
+              2013
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Resume download -->
+    <section class="pt-2">
+      <a
+        href="/BJA-Resume.pdf"
+        target="_blank"
+        class="inline-flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium text-white transition-colors duration-200"
+        style="background-color: var(--color-accent);"
+        onmouseover="this.style.backgroundColor='#6d28d9'"
+        onmouseout="this.style.backgroundColor='var(--color-accent)'"
+      >
+        <span>📄</span> Download Resume (PDF)
+      </a>
+    </section>
+
+  </div>
+</BaseLayout>

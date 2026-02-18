@@ -1,11 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PostCard from '../components/PostCard.astro';
-import { getCollection } from 'astro:content';
-
-const recentPosts = (await getCollection('blog', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 3);
 
 const navCards = [
   {
@@ -14,9 +8,9 @@ const navCards = [
     description: 'Who I am and why any of this exists.',
   },
   {
-    href: '/blog',
-    label: 'Blog',
-    description: 'Game design takes. Fantasy sports. Whatever.',
+    href: '/career',
+    label: 'Career',
+    description: '6+ years in enterprise IT. The professional stuff.',
   },
   {
     href: '/now',
@@ -48,15 +42,15 @@ const navCards = [
     </h1>
     <p class="text-xl leading-relaxed mb-4" style="color: var(--color-body);">
       IT Support &amp; SysAdmin by day. Thinker about game design, fantasy sports
-      obsessive, and occasional writer by night.
+      obsessive, and general-purpose curious person by night.
     </p>
     <p style="color: var(--color-muted);">
-      This isn't a portfolio. It's just a place to write things down.
+      This is my corner of the internet. Not a portfolio. Just a place to exist online.
     </p>
   </section>
 
   <!-- Nav cards -->
-  <section class="mb-16 grid grid-cols-2 gap-3 sm:grid-cols-2">
+  <section class="grid grid-cols-2 gap-3 sm:grid-cols-2">
     {navCards.map(card => (
       <a
         href={card.href}
@@ -74,36 +68,4 @@ const navCards = [
       </a>
     ))}
   </section>
-
-  <!-- Recent posts -->
-  {recentPosts.length > 0 && (
-    <section>
-      <h2
-        class="text-xs font-medium uppercase tracking-widest mb-5"
-        style="color: var(--color-muted);"
-      >
-        Recent Posts
-      </h2>
-      <div class="flex flex-col gap-4">
-        {recentPosts.map(post => (
-          <PostCard
-            title={post.data.title}
-            description={post.data.description}
-            pubDate={post.data.pubDate}
-            slug={post.slug}
-            tags={post.data.tags}
-          />
-        ))}
-      </div>
-      <a
-        href="/blog"
-        class="inline-block mt-6 text-sm transition-colors duration-200"
-        style="color: var(--color-accent);"
-        onmouseover="this.style.color='var(--color-accent-light)'"
-        onmouseout="this.style.color='var(--color-accent)'"
-      >
-        All posts →
-      </a>
-    </section>
-  )}
 </BaseLayout>

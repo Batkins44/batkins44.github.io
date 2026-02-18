@@ -28,69 +28,86 @@ const lastUpdated = 'February 2026';
     </p>
   </header>
 
-  <div class="flex flex-col gap-10" style="color: var(--color-body);">
+  <div class="flex flex-col gap-6" style="color: var(--color-body);">
 
-    <section>
+    <!-- Playing -->
+    <section class="border border-[#2a2a2a] rounded-lg p-6 bg-[#1a1a1a]">
       <h2
-        class="text-xs font-medium uppercase tracking-widest mb-4"
+        class="text-xs font-medium uppercase tracking-widest mb-4 flex items-center gap-2"
         style="color: var(--color-muted);"
       >
-        Playing
+        <span class="text-lg">🎮</span> Playing
       </h2>
-      <p class="leading-relaxed">
-        Update this with whatever you're currently playing. This page is meant to be kept fresh — edit
-        <code class="text-xs bg-[#1a1a1a] px-1.5 py-0.5 rounded" style="font-family: var(--font-mono); color: var(--color-accent-light);">src/pages/now.astro</code>
-        whenever things change.
-      </p>
+      <ul class="flex flex-col gap-2">
+        <li class="leading-relaxed"><strong class="text-[#a78bfa]">Arc Raiders</strong> <span class="text-[#6b7280]">— still deep in this one</span></li>
+        <li class="leading-relaxed"><strong class="text-[#a78bfa]">Silksong</strong> <span class="text-[#6b7280]">— the wait is finally over</span></li>
+        <li class="leading-relaxed"><strong class="text-[#a78bfa]">Rocket League</strong> <span class="text-[#6b7280]">— the eternal rotation</span></li>
+        <li class="leading-relaxed"><strong class="text-[#a78bfa]">The First Berserker: Khazan</strong></li>
+        <li class="leading-relaxed"><strong class="text-[#a78bfa]">Brotato</strong> <span class="text-[#6b7280]">— perfect between-games game</span></li>
+      </ul>
     </section>
 
-    <section>
+    <!-- Watching -->
+    <section class="border border-[#2a2a2a] rounded-lg p-6 bg-[#1a1a1a]">
       <h2
-        class="text-xs font-medium uppercase tracking-widest mb-4"
+        class="text-xs font-medium uppercase tracking-widest mb-4 flex items-center gap-2"
         style="color: var(--color-muted);"
       >
-        Watching
+        <span class="text-lg">📺</span> Watching
       </h2>
-      <p class="leading-relaxed">
-        What's in the rotation right now — shows, films, whatever.
-      </p>
+      <ul class="flex flex-col gap-2">
+        <li class="leading-relaxed"><strong class="text-[#a78bfa]">One Battle After Another</strong></li>
+        <li class="leading-relaxed"><strong class="text-[#a78bfa]">Pluribus</strong></li>
+        <li class="leading-relaxed"><strong class="text-[#a78bfa]">Fallout</strong></li>
+        <li class="leading-relaxed"><strong class="text-[#a78bfa]">What We Do in the Shadows</strong></li>
+      </ul>
     </section>
 
-    <section>
+    <!-- Listening -->
+    <section class="border border-[#2a2a2a] rounded-lg p-6 bg-[#1a1a1a]">
       <h2
-        class="text-xs font-medium uppercase tracking-widest mb-4"
+        class="text-xs font-medium uppercase tracking-widest mb-4 flex items-center gap-2"
         style="color: var(--color-muted);"
       >
-        Working On
+        <span class="text-lg">🎧</span> Listening
       </h2>
-      <p class="leading-relaxed">
+      <ul class="flex flex-col gap-2">
+        <li class="leading-relaxed"><strong class="text-[#a78bfa]">Washed Out</strong></li>
+        <li class="leading-relaxed"><strong class="text-[#a78bfa]">Panda Bear</strong></li>
+        <li class="leading-relaxed"><strong class="text-[#a78bfa]">MF DOOM</strong></li>
+        <li class="leading-relaxed"><strong class="text-[#a78bfa]">Gorillaz</strong></li>
+      </ul>
+    </section>
+
+    <!-- Working On -->
+    <section class="border border-[#2a2a2a] rounded-lg p-6 bg-[#1a1a1a]">
+      <h2
+        class="text-xs font-medium uppercase tracking-widest mb-4 flex items-center gap-2"
+        style="color: var(--color-muted);"
+      >
+        <span class="text-lg">🔧</span> Working On
+      </h2>
+      <p class="leading-relaxed mb-3">
         This site. Just rebuilt it from scratch because the 2017 version was embarrassing.
         Up next: actually writing things for it.
       </p>
-    </section>
-
-    <section>
-      <h2
-        class="text-xs font-medium uppercase tracking-widest mb-4"
-        style="color: var(--color-muted);"
-      >
-        Fantasy Sports
-      </h2>
       <p class="leading-relaxed">
-        NHL season is live. NFL is in the offseason — which means mock drafts and regret
-        about last year's picks have already started.
+        Also in the job hunt — looking for my next IT / SysAdmin role. If you know of something,
+        <a href="/contact" class="text-[#a78bfa] underline hover:text-[#7c3aed] transition-colors duration-200">say hi</a>.
       </p>
     </section>
 
-    <section>
+    <!-- Fantasy Sports -->
+    <section class="border border-[#2a2a2a] rounded-lg p-6 bg-[#1a1a1a]">
       <h2
-        class="text-xs font-medium uppercase tracking-widest mb-4"
+        class="text-xs font-medium uppercase tracking-widest mb-4 flex items-center gap-2"
         style="color: var(--color-muted);"
       >
-        Listening
+        <span class="text-lg">🏈</span> Fantasy Sports
       </h2>
       <p class="leading-relaxed">
-        Update this with what's been on heavy rotation lately.
+        Offseason across the board. Mock drafts, waiver wire daydreaming, and overanalyzing
+        last year's mistakes. The usual.
       </p>
     </section>
 
