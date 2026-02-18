@@ -60,6 +60,25 @@ const artists = [
       >
         <span class="text-lg">🎮</span> Playing
       </h2>
+
+      <!-- Highlight clip -->
+      <div class="mb-4 relative overflow-hidden rounded-lg border border-[#2a2a2a]">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="w-full rounded-lg"
+        >
+          <source src="/images/now/best-goal.mp4" type="video/mp4" />
+        </video>
+        <div class="absolute bottom-0 left-0 right-0 px-3 py-2 bg-gradient-to-t from-black/80 to-transparent">
+          <p class="text-xs font-medium text-[#a78bfa]" style="font-family: var(--font-display);">
+            🚀 Recent highlight — Rocket League
+          </p>
+        </div>
+      </div>
+
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
         {games.map(game => (
           <div class="group relative overflow-hidden rounded-lg border border-[#2a2a2a] hover:border-[#7c3aed] transition-all duration-300">
