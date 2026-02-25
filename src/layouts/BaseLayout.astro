@@ -6,11 +6,13 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  orbColor?: string;
 }
 
 const {
   title,
   description = 'Ben Atkins — IT by day, everything else by night.',
+  orbColor = 'rgba(124, 58, 237, 0.18)',
 } = Astro.props;
 ---
 
@@ -30,6 +32,7 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body class="min-h-screen flex flex-col">
+    <div class="site-orb" style={`--orb-color: ${orbColor};`} aria-hidden="true"></div>
     <Header />
     <main class="flex-1 w-full max-w-3xl mx-auto px-6 py-12">
       <slot />
