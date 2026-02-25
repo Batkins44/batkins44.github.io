@@ -28,16 +28,23 @@ const navCards = [
 <BaseLayout title="Home">
   <!-- Hero -->
   <section class="relative mb-10">
-    <span class="badge">Hey, I'm</span>
-    <h1 class="hero-name">Ben<br />Atkins</h1>
-    <p class="text-xl leading-relaxed mb-4" style="color: var(--color-body);">
-      Professionally: IT Support &amp; SysAdmin.
-      <br /><br />
-      Personally: Humanist, Psychology enthusiast, and lifelong gamer. I adore indie rock, hiking, and watching hockey.
-    </p>
-    <p style="color: var(--color-muted);">
-      My corner of the internet. Not a portfolio — more like a digital front porch. Pull up a chair.
-    </p>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <span class="badge">Hey, I'm</span>
+        <h1 class="hero-name">Ben<br />Atkins</h1>
+        <p class="text-xl leading-relaxed mb-4" style="color: var(--color-body);">
+          Professionally: IT Support &amp; SysAdmin.
+          <br /><br />
+          Personally: Humanist, Psychology enthusiast, and lifelong gamer. I adore indie rock, hiking, and watching hockey.
+        </p>
+        <p style="color: var(--color-muted);">
+          My corner of the internet. Not a portfolio — more like a digital front porch. Pull up a chair.
+        </p>
+      </div>
+      <div class="hero-photo-wrap">
+        <img src="/images/headshot.jpg" alt="Ben Atkins" class="hero-photo" />
+      </div>
+    </div>
   </section>
 
   <!-- Gradient divider -->
@@ -57,6 +64,43 @@ const navCards = [
 </BaseLayout>
 
 <style>
+  /* Hero layout */
+  .hero-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .hero-text {
+    flex: 1;
+  }
+
+  .hero-photo-wrap {
+    flex-shrink: 0;
+    padding-top: 0.25rem;
+  }
+
+  .hero-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 0 24px rgba(124, 58, 237, 0.35);
+  }
+
+  @media (max-width: 480px) {
+    .hero-inner {
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+    }
+    .hero-photo {
+      width: 110px;
+      height: 110px;
+    }
+  }
+
   /* "Hey, I'm" pill badge */
   .badge {
     display: inline-block;
