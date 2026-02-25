@@ -113,3 +113,17 @@ a {
   color: var(--color-heading);
   font-weight: 600;
 }
+
+/* Site-wide decorative orb — color set per-page via CSS var */
+.site-orb {
+  position: fixed;
+  top: -220px;
+  right: -220px;
+  width: 620px;
+  height: 620px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--orb-color, rgba(124, 58, 237, 0.18)) 0%, transparent 68%);
+  filter: blur(48px);
+  pointer-events: none;
+  z-index: 0;
+}
