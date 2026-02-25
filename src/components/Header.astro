@@ -24,7 +24,9 @@ function isActive(href: string): boolean {
     >
       ben atkins
     </a>
-    <nav aria-label="Main navigation">
+
+    <!-- Desktop nav -->
+    <nav aria-label="Main navigation" class="hidden sm:block">
       <ul class="flex gap-6 items-center list-none m-0 p-0">
         {navLinks.map(link => (
           <li>
@@ -42,5 +44,65 @@ function isActive(href: string): boolean {
         ))}
       </ul>
     </nav>
+
+    <!-- Hamburger button (mobile only) -->
+    <button
+      id="menu-toggle"
+      class="sm:hidden flex flex-col gap-1.5 p-1 cursor-pointer"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <span class="block w-5 h-0.5 bg-[#6b7280] transition-all duration-200" id="bar1"></span>
+      <span class="block w-5 h-0.5 bg-[#6b7280] transition-all duration-200" id="bar2"></span>
+      <span class="block w-5 h-0.5 bg-[#6b7280] transition-all duration-200" id="bar3"></span>
+    </button>
+  </div>
+
+  <!-- Mobile nav dropdown -->
+  <div id="mobile-menu" class="hidden sm:hidden border-t border-[#2a2a2a]">
+    <nav aria-label="Mobile navigation">
+      <ul class="flex flex-col list-none m-0 p-0">
+        {navLinks.map(link => (
+          <li>
+            <a
+              href={link.href}
+              class={`block px-6 py-3.5 text-sm font-medium border-b border-[#1f1f1f] transition-colors duration-200 ${
+                isActive(link.href)
+                  ? 'text-[#a78bfa]'
+                  : 'text-[#6b7280] hover:text-[#f5f5f5] hover:bg-[#1a1a1a]'
+              }`}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   </div>
 </header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle')!;
+  const menu = document.getElementById('mobile-menu')!;
+  const bar1 = document.getElementById('bar1')!;
+  const bar2 = document.getElementById('bar2')!;
+  const bar3 = document.getElementById('bar3')!;
+
+  toggle.addEventListener('click', () => {
+    const isOpen = !menu.classList.contains('hidden');
+
+    if (isOpen) {
+      menu.classList.add('hidden');
+      toggle.setAttribute('aria-expanded', 'false');
+      bar1.style.transform = '';
+      bar2.style.opacity = '';
+      bar3.style.transform = '';
+    } else {
+      menu.classList.remove('hidden');
+      toggle.setAttribute('aria-expanded', 'true');
+      bar1.style.transform = 'translateY(8px) rotate(45deg)';
+      bar2.style.opacity = '0';
+      bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+    }
+  });
+</script>
