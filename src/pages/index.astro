@@ -15,39 +15,24 @@ const navCards = [
   {
     href: '/now',
     label: 'Now',
-    description: 'What I\'m currently playing, watching, obsessing over.',
+    description: "What I'm currently playing, watching, obsessing over.",
   },
   {
     href: '/contact',
     label: 'Contact',
-    description: 'Say something. I don\'t bite.',
+    description: "Say something. I don't bite.",
   },
 ];
 ---
 
 <BaseLayout title="Home">
-  <!-- Psychedelic blob animation -->
-  <div class="relative mb-16">
-    <canvas
-      id="psychedelic-bg"
-      class="absolute inset-0 w-full h-full rounded-xl pointer-events-none"
-      style="opacity: 0.35; mix-blend-mode: screen;"
-    ></canvas>
+  <!-- Decorative bg orb (CSS-only, no JS) -->
+  <div class="orb" aria-hidden="true"></div>
 
   <!-- Hero -->
-  <section class="relative mb-0 pt-0">
-    <p
-      class="text-sm font-medium mb-3 tracking-widest uppercase"
-      style="color: var(--color-accent);"
-    >
-      Hey, I'm
-    </p>
-    <h1
-      class="text-5xl font-bold mb-5"
-      style="font-family: var(--font-display); color: var(--color-heading);"
-    >
-      Ben Atkins
-    </h1>
+  <section class="relative mb-10">
+    <span class="badge">Hey, I'm</span>
+    <h1 class="hero-name">Ben<br />Atkins</h1>
     <p class="text-xl leading-relaxed mb-4" style="color: var(--color-body);">
       IT Support &amp; SysAdmin by day. Thinker about game design, fantasy sports
       obsessive, and general-purpose curious person by night.
@@ -56,71 +41,134 @@ const navCards = [
       This is my corner of the internet. Not a portfolio. Just a place to exist online.
     </p>
   </section>
-  </div>
+
+  <!-- Gradient divider -->
+  <div class="gradient-divider mb-10" aria-hidden="true"></div>
 
   <!-- Nav cards -->
-  <section class="grid grid-cols-2 gap-3 sm:grid-cols-2">
+  <section class="grid grid-cols-2 gap-4">
     {navCards.map(card => (
-      <a
-        href={card.href}
-        class="group block border border-[#2a2a2a] rounded-lg p-4 hover:border-[#7c3aed] hover:bg-[#1a1a1a] transition-colors duration-200"
-      >
-        <span
-          class="block text-sm font-semibold mb-1 group-hover:text-[#a78bfa] transition-colors duration-200"
-          style="font-family: var(--font-display); color: var(--color-heading);"
-        >
-          {card.label} →
+      <a href={card.href} class="nav-card group">
+        <span class="nav-card-label">
+          {card.label} <span class="arrow">→</span>
         </span>
-        <span class="block text-xs" style="color: var(--color-muted);">
-          {card.description}
-        </span>
+        <span class="nav-card-desc">{card.description}</span>
       </a>
     ))}
   </section>
 </BaseLayout>
 
-<script>
-  const canvas = document.getElementById('psychedelic-bg') as HTMLCanvasElement;
-  const ctx = canvas.getContext('2d')!;
-
-  function resize() {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
+<style>
+  /* Decorative purple orb — top-right, CSS only */
+  .orb {
+    position: fixed;
+    top: -220px;
+    right: -220px;
+    width: 620px;
+    height: 620px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.18) 0%, transparent 68%);
+    filter: blur(48px);
+    pointer-events: none;
+    z-index: 0;
   }
 
-  const blobs = [
-    { ox: 0.0, oy: 1.2, speed: 0.5, hue: 270 },
-    { ox: 2.1, oy: 0.3, speed: 0.35, hue: 300 },
-    { ox: 4.2, oy: 2.8, speed: 0.6, hue: 200 },
-    { ox: 1.0, oy: 4.0, speed: 0.45, hue: 320 },
-    { ox: 3.5, oy: 0.9, speed: 0.4, hue: 180 },
-  ];
-
-  let t = 0;
-
-  function draw() {
-    t += 0.004;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    for (const blob of blobs) {
-      const x = (0.5 + Math.sin(t * blob.speed + blob.ox) * 0.4) * canvas.width;
-      const y = (0.5 + Math.cos(t * blob.speed * 0.8 + blob.oy) * 0.4) * canvas.height;
-      const r = Math.min(canvas.width, canvas.height) * 0.55;
-      const hue = (blob.hue + t * 25) % 360;
-
-      const grad = ctx.createRadialGradient(x, y, 0, x, y, r);
-      grad.addColorStop(0, `hsla(${hue}, 100%, 65%, 0.55)`);
-      grad.addColorStop(1, `hsla(${hue}, 100%, 65%, 0)`);
-
-      ctx.globalCompositeOperation = 'screen';
-      ctx.fillStyle = grad;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-    }
-
-    requestAnimationFrame(draw);
+  /* "Hey, I'm" pill badge */
+  .badge {
+    display: inline-block;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent-light);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.85rem;
+    border-radius: 999px;
+    margin-bottom: 1.25rem;
   }
 
-  resize();
-  window.addEventListener('resize', resize);
-  draw();
-</script>
+  /* Giant gradient name */
+  .hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(4.5rem, 16vw, 8rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #c4b5fd 0%, #7c3aed 45%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Thin gradient line between hero and cards */
+  .gradient-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--color-accent) 50%, transparent 100%);
+    opacity: 0.45;
+  }
+
+  /* Nav cards */
+  .nav-card {
+    display: block;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    padding: 1.35rem 1.25rem;
+    background: var(--color-surface);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.25s, transform 0.2s ease, box-shadow 0.25s;
+  }
+
+  /* Gradient sheen on hover */
+  .nav-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(140deg, rgba(124, 58, 237, 0.1) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  .nav-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 36px rgba(124, 58, 237, 0.22);
+  }
+
+  .nav-card:hover::before {
+    opacity: 1;
+  }
+
+  .nav-card-label {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: 0.4rem;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-card:hover .nav-card-label {
+    color: var(--color-accent-light);
+  }
+
+  .arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .nav-card:hover .arrow {
+    transform: translateX(5px);
+  }
+
+  .nav-card-desc {
+    display: block;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--color-muted);
+    position: relative;
+  }
+</style>
