@@ -127,3 +127,12 @@ a {
   pointer-events: none;
   z-index: 0;
 }
+
+@media (max-width: 640px) {
+  .site-orb {
+    width: 380px;
+    height: 380px;
+    top: -140px;
+    right: -140px;
+  }
+}
