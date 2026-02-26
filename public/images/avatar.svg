@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 280" width="220" height="280">
+  <!-- Background -->
+  <rect width="220" height="280" rx="20" fill="#0d0a1a"/>
+  <!-- Soft bg glow -->
+  <circle cx="110" cy="160" r="90" fill="#7c3aed" opacity="0.07"/>
+
+  <!-- Body / hoodie -->
+  <path d="M 30 280 Q 28 220 60 210 L 80 202 Q 110 215 140 202 L 160 210 Q 192 220 190 280 Z" fill="#1e1040"/>
+  <!-- Hoodie pocket -->
+  <rect x="88" y="238" width="44" height="24" rx="8" fill="#2d1b69"/>
+  <!-- Controller on pocket -->
+  <rect x="94" y="244" width="32" height="12" rx="4" fill="#7c3aed"/>
+  <circle cx="102" cy="250" r="2" fill="#c4b5fd"/>
+  <circle cx="118" cy="250" r="2" fill="#c4b5fd"/>
+  <rect x="109" y="246" width="2" height="5" rx="1" fill="#c4b5fd"/>
+  <rect x="107" y="248" width="5" height="2" rx="1" fill="#c4b5fd"/>
+
+  <!-- Neck -->
+  <rect x="97" y="175" width="26" height="32" rx="8" fill="#d4956a"/>
+
+  <!-- Head -->
+  <ellipse cx="110" cy="153" rx="50" ry="54" fill="#d4956a"/>
+
+  <!-- Hair (dark, messy-casual) -->
+  <path d="M 60 145 Q 58 98 110 90 Q 162 98 160 145 Q 155 115 138 108 Q 124 103 110 104 Q 96 103 82 108 Q 65 115 60 145 Z" fill="#1c0e05"/>
+  <path d="M 60 130 Q 56 112 62 98" stroke="#1c0e05" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <path d="M 160 130 Q 164 112 158 98" stroke="#1c0e05" stroke-width="10" fill="none" stroke-linecap="round"/>
+
+  <!-- Eyebrows -->
+  <path d="M 84 138 Q 93 133 103 137" stroke="#1c0e05" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 117 137 Q 127 133 136 138" stroke="#1c0e05" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Eyes (white) -->
+  <ellipse cx="93" cy="152" rx="8" ry="8.5" fill="white"/>
+  <ellipse cx="127" cy="152" rx="8" ry="8.5" fill="white"/>
+  <!-- Irises - purple to match site -->
+  <circle cx="93" cy="153" r="5" fill="#5b21b6"/>
+  <circle cx="127" cy="153" r="5" fill="#5b21b6"/>
+  <!-- Pupils -->
+  <circle cx="93" cy="153" r="2.5" fill="#1a0a2e"/>
+  <circle cx="127" cy="153" r="2.5" fill="#1a0a2e"/>
+  <!-- Eye shine -->
+  <circle cx="95" cy="151" r="1.5" fill="white"/>
+  <circle cx="129" cy="151" r="1.5" fill="white"/>
+
+  <!-- Nose -->
+  <path d="M 107 162 Q 104 170 110 173 Q 116 170 113 162" stroke="#b87040" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+  <!-- Smile / smirk -->
+  <path d="M 96 180 Q 110 194 124 180" stroke="#b87040" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Headphone band -->
+  <path d="M 60 148 Q 60 90 110 84 Q 160 90 160 148" stroke="#7c3aed" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <!-- Left cup -->
+  <rect x="47" y="140" width="25" height="36" rx="12" fill="#5b21b6"/>
+  <rect x="51" y="146" width="10" height="10" rx="5" fill="#7c3aed"/>
+  <!-- Right cup -->
+  <rect x="148" y="140" width="25" height="36" rx="12" fill="#5b21b6"/>
+  <rect x="159" y="146" width="10" height="10" rx="5" fill="#7c3aed"/>
+
+  <!-- Small accent stars -->
+  <text x="24" y="68" font-size="12" fill="#c4b5fd" opacity="0.5">✦</text>
+  <text x="184" y="52" font-size="9" fill="#ec4899" opacity="0.5">✦</text>
+  <text x="192" y="100" font-size="7" fill="#c4b5fd" opacity="0.4">✦</text>
+</svg>
