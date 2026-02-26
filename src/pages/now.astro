@@ -45,7 +45,7 @@ const artists = [
         href="https://nownownow.com/about"
         target="_blank"
         rel="noopener noreferrer"
-        class="hover:text-[#a78bfa] transition-colors duration-200 underline"
+        class="hover:text-[#34d399] transition-colors duration-200 underline"
       >
         what's a now page?
       </a>
@@ -75,7 +75,7 @@ const artists = [
           <source src="/images/now/best-goal.mp4" type="video/mp4" />
         </video>
         <div class="absolute bottom-0 left-0 right-0 px-3 py-2 bg-gradient-to-t from-black/80 to-transparent">
-          <p class="text-xs font-medium text-[#a78bfa]" style="font-family: var(--font-display);">
+          <p class="text-xs font-medium text-[#34d399]" style="font-family: var(--font-display);">
             🚀 Recent highlight — Rocket League
           </p>
         </div>
@@ -83,7 +83,7 @@ const artists = [
 
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
         {games.map(game => (
-          <div class="group relative overflow-hidden rounded-lg border border-[#2a2a2a] hover:border-[#7c3aed] transition-all duration-300">
+          <div class="group relative overflow-hidden rounded-lg border border-[#2a2a2a] hover:border-[#059669] transition-all duration-300">
             <img
               src={game.img}
               alt={game.name}
@@ -99,7 +99,7 @@ const artists = [
                 {game.name}
               </p>
               {game.note && (
-                <p class="text-xs mt-0.5 text-[#a78bfa]">{game.note}</p>
+                <p class="text-xs mt-0.5 text-[#34d399]">{game.note}</p>
               )}
             </div>
           </div>
@@ -117,7 +117,7 @@ const artists = [
       </h2>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {shows.map(show => (
-          <div class="group relative overflow-hidden rounded-lg border border-[#2a2a2a] hover:border-[#7c3aed] transition-all duration-300">
+          <div class="group relative overflow-hidden rounded-lg border border-[#2a2a2a] hover:border-[#059669] transition-all duration-300">
             <img
               src={show.img}
               alt={show.name}
@@ -148,7 +148,7 @@ const artists = [
       </h2>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {artists.map(artist => (
-          <div class="group relative overflow-hidden rounded-lg border border-[#2a2a2a] hover:border-[#7c3aed] transition-all duration-300">
+          <div class="group relative overflow-hidden rounded-lg border border-[#2a2a2a] hover:border-[#059669] transition-all duration-300">
             <img
               src={artist.img}
               alt={artist.name}
