@@ -31,19 +31,15 @@ const navCards = [
     <div class="hero-inner">
       <div class="hero-text">
         <span class="badge">Hey, I'm</span>
-        <h1 class="hero-name">Ben<br />Atkins</h1>
+        <h1 class="hero-name">Ben Atkins</h1>
         <p class="text-xl leading-relaxed mb-4" style="color: var(--color-body);">
           Professionally: IT Support &amp; SysAdmin.
           <br /><br />
-          Personally: Humanist, Psychology enthusiast, and lifelong gamer. I adore indie rock, hiking, and watching hockey.
+          Personally: Humanist at heart. Gamer by nature. Fueled by indie music and the outdoors. Perpetually fascinated by psychology. Occasional photographer.
         </p>
         <p style="color: var(--color-muted);">
           My corner of the internet. Not a portfolio — more like a digital front porch. Pull up a chair.
         </p>
-      </div>
-      <div class="hero-photo-wrap">
-        <img src="/images/headshot.jpg" alt="Ben Atkins" class="hero-photo" />
-      </div>
     </div>
   </section>
 
@@ -51,7 +47,7 @@ const navCards = [
   <div class="gradient-divider mb-10" aria-hidden="true"></div>
 
   <!-- Nav cards -->
-  <section class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <section class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
     {navCards.map(card => (
       <a href={card.href} class="nav-card group">
         <span class="nav-card-label">
@@ -61,44 +57,29 @@ const navCards = [
       </a>
     ))}
   </section>
+
+  <!-- Gradient divider -->
+  <div class="gradient-divider mb-10" aria-hidden="true"></div>
+
+  <!-- Photo banner -->
+  <section class="photo-banner-wrap">
+    <img src="/images/home/gc1.jpg" alt="Horseshoe Bend, Arizona" class="photo-banner" />
+    <p class="photo-caption">Horseshoe Bend, Arizona, 2026</p>
+  </section>
 </BaseLayout>
 
 <style>
   /* Hero layout */
   .hero-inner {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 2rem;
   }
 
   .hero-text {
-    flex: 1;
-  }
-
-  .hero-photo-wrap {
-    flex-shrink: 0;
-    padding-top: 0.25rem;
-  }
-
-  .hero-photo {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--color-accent);
-    box-shadow: 0 0 24px rgba(124, 58, 237, 0.35);
-  }
-
-  @media (max-width: 480px) {
-    .hero-inner {
-      flex-direction: column-reverse;
-      align-items: center;
-      text-align: center;
-    }
-    .hero-photo {
-      width: 110px;
-      height: 110px;
-    }
+    width: 100%;
   }
 
   /* "Hey, I'm" pill badge */
@@ -118,9 +99,9 @@ const navCards = [
   /* Giant gradient name */
   .hero-name {
     font-family: var(--font-display);
-    font-size: clamp(3rem, 11vw, 5.5rem);
+    font-size: clamp(2.8rem, 10vw, 5rem);
     font-weight: 800;
-    line-height: 0.95;
+    line-height: 1;
     letter-spacing: -0.03em;
     margin-bottom: 1.5rem;
     background: linear-gradient(135deg, #c4b5fd 0%, #7c3aed 45%, #ec4899 100%);
@@ -198,5 +179,34 @@ const navCards = [
     line-height: 1.5;
     color: var(--color-muted);
     position: relative;
+  }
+
+  /* Photo banner */
+  .photo-banner-wrap {
+    width: 100%;
+  }
+
+  .photo-banner {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 14px;
+    border: 1px solid var(--color-border);
+    display: block;
+  }
+
+  .photo-caption {
+    margin-top: 0.6rem;
+    text-align: right;
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 480px) {
+    .photo-banner {
+      height: 220px;
+    }
   }
 </style>
