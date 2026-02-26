@@ -29,9 +29,6 @@ const navCards = [
   <!-- Hero -->
   <section class="relative mb-10">
     <div class="hero-inner">
-      <div class="hero-photo-wrap">
-        <img src="/images/avatar.svg" alt="Ben Atkins" class="hero-photo" />
-      </div>
       <div class="hero-text">
         <span class="badge">Hey, I'm</span>
         <h1 class="hero-name">Ben Atkins</h1>
@@ -43,7 +40,6 @@ const navCards = [
         <p style="color: var(--color-muted);">
           My corner of the internet. Not a portfolio — more like a digital front porch. Pull up a chair.
         </p>
-      </div>
     </div>
   </section>
 
@@ -75,27 +71,6 @@ const navCards = [
 
   .hero-text {
     width: 100%;
-  }
-
-  .hero-photo-wrap {
-    flex-shrink: 0;
-  }
-
-  .hero-photo {
-    width: 220px;
-    height: 280px;
-    border-radius: 20px;
-    object-fit: cover;
-    object-position: center top;
-    border: 2px solid var(--color-accent);
-    box-shadow: 0 0 60px rgba(124, 58, 237, 0.5), 0 20px 60px rgba(0, 0, 0, 0.4);
-  }
-
-  @media (max-width: 480px) {
-    .hero-photo {
-      width: 180px;
-      height: 230px;
-    }
   }
 
   /* "Hey, I'm" pill badge */
