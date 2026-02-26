@@ -35,7 +35,7 @@ const navCards = [
         <p class="text-xl leading-relaxed mb-4" style="color: var(--color-body);">
           Professionally: IT Support &amp; SysAdmin.
           <br /><br />
-          Personally: Humanist, Psychology enthusiast, and lifelong gamer. I adore indie rock, hiking, and watching hockey.
+          Personally: Humanist at heart. Gamer by nature. Fueled by indie music and the outdoors. Perpetually fascinated by psychology. Occasional photographer.
         </p>
         <p style="color: var(--color-muted);">
           My corner of the internet. Not a portfolio — more like a digital front porch. Pull up a chair.
@@ -47,7 +47,7 @@ const navCards = [
   <div class="gradient-divider mb-10" aria-hidden="true"></div>
 
   <!-- Nav cards -->
-  <section class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <section class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
     {navCards.map(card => (
       <a href={card.href} class="nav-card group">
         <span class="nav-card-label">
@@ -56,6 +56,15 @@ const navCards = [
         <span class="nav-card-desc">{card.description}</span>
       </a>
     ))}
+  </section>
+
+  <!-- Gradient divider -->
+  <div class="gradient-divider mb-10" aria-hidden="true"></div>
+
+  <!-- Photo banner -->
+  <section class="photo-banner-wrap">
+    <img src="/images/home/gc1.jpg" alt="Horseshoe Bend, Arizona" class="photo-banner" />
+    <p class="photo-caption">Horseshoe Bend, Arizona, 2026</p>
   </section>
 </BaseLayout>
 
@@ -170,5 +179,34 @@ const navCards = [
     line-height: 1.5;
     color: var(--color-muted);
     position: relative;
+  }
+
+  /* Photo banner */
+  .photo-banner-wrap {
+    width: 100%;
+  }
+
+  .photo-banner {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 14px;
+    border: 1px solid var(--color-border);
+    display: block;
+  }
+
+  .photo-caption {
+    margin-top: 0.6rem;
+    text-align: right;
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 480px) {
+    .photo-banner {
+      height: 220px;
+    }
   }
 </style>
