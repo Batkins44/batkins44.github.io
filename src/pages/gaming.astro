@@ -1,0 +1,220 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// TODO: After deploying the Cloudflare Worker (see cloudflare/worker.js),
+// replace this with your Worker URL.
+const WORKER_URL = 'https://weathered-sky-6b73.benjatkins13.workers.dev';
+---
+
+<BaseLayout
+  title="Gaming"
+  description="Ben Atkins's gaming profile, reviews, and highlights."
+  orbColor="rgba(99, 102, 241, 0.15)"
+>
+  <header class="mb-10">
+    <h1
+      class="text-4xl font-bold mb-3"
+      style="font-family: var(--font-display); color: var(--color-heading);"
+    >
+      Gaming
+    </h1>
+    <p style="color: var(--color-muted);">
+      Reviews, highlights, countdowns, and more — coming soon.
+    </p>
+  </header>
+
+  <div class="flex flex-col gap-10">
+
+    <!-- Currently Playing -->
+    <section>
+      <h2
+        class="text-xs font-medium uppercase tracking-widest mb-4"
+        style="color: var(--color-muted);"
+      >
+        Currently Playing
+      </h2>
+
+      <!-- Loading skeleton -->
+      <div id="status-loading" class="flex items-center gap-3 p-4 rounded-xl border border-[#2a2a2a] animate-pulse" style="background: #1a1a1a;">
+        <div class="w-3 h-3 rounded-full bg-[#2a2a2a] shrink-0"></div>
+        <div class="h-4 w-40 rounded bg-[#2a2a2a]"></div>
+      </div>
+
+      <!-- In-game state (hidden until JS runs) -->
+      <div id="status-ingame" class="hidden items-center gap-3 p-4 rounded-xl border border-[#16a34a]/40" style="background: #1a1a1a;">
+        <span class="relative flex h-3 w-3 shrink-0">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+          <span class="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
+        </span>
+        <span class="text-sm font-medium text-green-400">In-game: <span id="status-game-name" class="text-[#f5f5f5]"></span></span>
+      </div>
+
+      <!-- Offline/not in game state (hidden until JS runs) -->
+      <div id="status-offline" class="hidden items-center gap-3 p-4 rounded-xl border border-[#2a2a2a]" style="background: #1a1a1a;">
+        <span class="h-3 w-3 rounded-full bg-[#4b5563] shrink-0"></span>
+        <span class="text-sm" style="color: var(--color-muted);">Not currently in game</span>
+      </div>
+    </section>
+
+    <!-- Recently Played -->
+    <section>
+      <h2
+        class="text-xs font-medium uppercase tracking-widest mb-4"
+        style="color: var(--color-muted);"
+      >
+        Recently Played <span class="normal-case font-normal">(last 2 weeks)</span>
+      </h2>
+
+      <!-- Loading skeleton grid -->
+      <div id="recent-loading" class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        {Array.from({ length: 6 }).map(() => (
+          <div class="rounded-lg border border-[#2a2a2a] animate-pulse" style="background: #1a1a1a;">
+            <div class="w-full aspect-[460/215] rounded-t-lg bg-[#2a2a2a]"></div>
+            <div class="p-3">
+              <div class="h-3 w-3/4 rounded bg-[#2a2a2a] mb-1.5"></div>
+              <div class="h-3 w-1/2 rounded bg-[#2a2a2a]"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Real grid (hidden until JS runs) -->
+      <div id="recent-grid" class="hidden grid-cols-2 sm:grid-cols-3 gap-3"></div>
+
+      <!-- Empty state -->
+      <p id="recent-empty" class="hidden text-sm" style="color: var(--color-muted);">
+        No games played in the last 2 weeks.
+      </p>
+    </section>
+
+    <!-- Steam Profile -->
+    <section>
+      <h2
+        class="text-xs font-medium uppercase tracking-widest mb-4"
+        style="color: var(--color-muted);"
+      >
+        Find me on Steam
+      </h2>
+      <a
+        href="https://steamcommunity.com/profiles/76561198025429665"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-4 p-5 rounded-xl border border-[#2a2a2a] hover:border-[#2563eb] transition-all duration-300 group"
+        style="background: #1a1a1a;"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          class="w-10 h-10 shrink-0 transition-opacity duration-200 group-hover:opacity-100 opacity-60"
+          aria-hidden="true"
+          fill="currentColor"
+          style="color: #ffffff;"
+        >
+          <path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.606 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.663 1.35 3.015 3.015 3.015 1.663 0 3.015-1.352 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.252 0-2.265-1.014-2.265-2.265z"/>
+        </svg>
+        <div>
+          <p class="font-semibold text-[#f5f5f5] group-hover:text-[#60a5fa] transition-colors duration-200" style="font-family: var(--font-display);">
+            batkins4
+          </p>
+          <p class="text-sm mt-0.5" style="color: var(--color-muted);">
+            View profile or send a friend request
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4 ml-auto shrink-0 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+          style="color: var(--color-muted);"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<script define:vars={{ WORKER_URL }}>
+  function fmtHours(minutes) {
+    const h = Math.round(minutes / 60);
+    return h === 1 ? '1 hr' : `${h} hrs`;
+  }
+
+  async function loadStatus() {
+    const loading = document.getElementById('status-loading');
+    const ingame  = document.getElementById('status-ingame');
+    const offline = document.getElementById('status-offline');
+    const gameName = document.getElementById('status-game-name');
+
+    try {
+      const res  = await fetch(`${WORKER_URL}?type=status`);
+      const data = await res.json();
+
+      loading.classList.add('hidden');
+
+      if (data.inGame) {
+        gameName.textContent = data.gameName;
+        ingame.classList.remove('hidden');
+        ingame.classList.add('flex');
+      } else {
+        offline.classList.remove('hidden');
+        offline.classList.add('flex');
+      }
+    } catch {
+      loading.classList.add('hidden');
+      offline.classList.remove('hidden');
+      offline.classList.add('flex');
+    }
+  }
+
+  async function loadRecent() {
+    const loading = document.getElementById('recent-loading');
+    const grid    = document.getElementById('recent-grid');
+    const empty   = document.getElementById('recent-empty');
+
+    try {
+      const res  = await fetch(`${WORKER_URL}?type=recent`);
+      const data = await res.json();
+
+      loading.classList.add('hidden');
+
+      if (!data.games || data.games.length === 0) {
+        empty.classList.remove('hidden');
+        return;
+      }
+
+      grid.innerHTML = data.games.map(g => `
+        <a
+          href="https://store.steampowered.com/app/${g.appid}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group relative overflow-hidden rounded-lg border border-[#2a2a2a] hover:border-[#2563eb] transition-all duration-300 block"
+        >
+          <img
+            src="${g.img}"
+            alt="${g.name}"
+            class="w-full aspect-[460/215] object-cover group-hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-3">
+            <p class="text-sm font-semibold text-white leading-tight" style="font-family: var(--font-display);">${g.name}</p>
+            <p class="text-xs mt-0.5 text-[#60a5fa]">${fmtHours(g.playtime2weeks)} this fortnight</p>
+          </div>
+        </a>
+      `).join('');
+
+      grid.classList.remove('hidden');
+      grid.classList.add('grid');
+    } catch {
+      loading.classList.add('hidden');
+      empty.classList.remove('hidden');
+    }
+  }
+
+  loadStatus();
+  loadRecent();
+</script>
