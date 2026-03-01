@@ -1,5 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const skills = [
+  'Identity & Access Management',
+  'M365 / Azure',
+  'Endpoint Management',
+  'PowerShell',
+  'SOC 2',
+  'Hardware Deployment',
+  'Front-End Dev',
+];
+
+const passions = [
+  {
+    label: 'Gaming',
+    body: 'Souls-likes, Metroidvanias, JRPGs — and Rocket League perpetually in the background. Genuinely passionate about game design, mechanical innovation, and clean UX.',
+  },
+  {
+    label: 'Music',
+    body: 'Indie rock, pop, and hip-hop. Always digging for the next hidden gem and rarely satisfied with whatever's on the radio.',
+  },
+  {
+    label: 'Fantasy Football',
+    body: 'Fiercely competitive manager with a borderline unhealthy level of investment and a well-documented imperviousness to annual heartbreak.',
+  },
+];
 ---
 
 <BaseLayout
@@ -17,9 +42,34 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p style="color: var(--color-muted);">The longer version.</p>
   </header>
 
+  <!-- Stats row -->
+  <div class="grid grid-cols-3 gap-4 mb-12">
+    {[
+      { value: '6', label: 'Years in IT' },
+      { value: '2', label: 'Industries' },
+      { value: 'NSS', label: 'Bootcamp Grad' },
+    ].map(({ value, label }) => (
+      <div
+        class="rounded-lg p-4 text-center"
+        style="background: var(--color-surface); border: 1px solid var(--color-border);"
+      >
+        <div
+          class="text-3xl font-bold mb-1"
+          style="font-family: var(--font-display); color: var(--color-accent-light);"
+        >
+          {value}
+        </div>
+        <div class="text-xs uppercase tracking-widest" style="color: var(--color-muted);">
+          {label}
+        </div>
+      </div>
+    ))}
+  </div>
+
   <div class="flex flex-col gap-10" style="color: var(--color-body);">
 
-    <section>
+    <!-- Career -->
+    <section class="pl-5" style="border-left: 2px solid var(--color-accent);">
       <h2
         class="text-xs font-medium uppercase tracking-widest mb-4"
         style="color: var(--color-muted);"
@@ -31,15 +81,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         and financial services (LBMC), with consistent delivery across varying compliance frameworks
         and operational demands.
       </p>
-      <p class="leading-relaxed">
+      <p class="leading-relaxed mb-6">
         Core competencies include identity and access management, M365/Azure administration,
         endpoint lifecycle management, hardware deployment, PowerShell automation, and SOC 2
         compliance coordination. Supplemental front-end development skills enable me to build
         solutions proactively, not just resolve issues reactively.
       </p>
+      <div class="flex flex-wrap gap-2">
+        {skills.map((skill) => (
+          <span
+            class="text-xs px-3 py-1 rounded-full"
+            style="background: rgba(37, 99, 235, 0.12); color: var(--color-accent-light); border: 1px solid rgba(37, 99, 235, 0.25);"
+          >
+            {skill}
+          </span>
+        ))}
+      </div>
     </section>
 
-    <section>
+    <!-- Background -->
+    <section class="pl-5" style="border-left: 2px solid var(--color-accent);">
       <h2
         class="text-xs font-medium uppercase tracking-widest mb-4"
         style="color: var(--color-muted);"
@@ -67,26 +128,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
     </section>
 
-    <section>
+    <!-- Passions -->
+    <section class="pl-5" style="border-left: 2px solid var(--color-accent);">
       <h2
         class="text-xs font-medium uppercase tracking-widest mb-4"
         style="color: var(--color-muted);"
       >
         Passions
       </h2>
-      <p class="leading-relaxed mb-3">
-        Dedicated gamer. It's more than just a hobby. Genuinely passionate about game design,
-        mechanical innovation, and clean, intuitive UX/UI. Core genres include Souls-likes,
-        Metroidvanias, and JRPGs, with Rocket League as a perpetual fixture in the background.
-      </p>
-      <p class="leading-relaxed mb-3">
-        Passionate about indie music, spanning rock, pop, and hip-hop. Always digging for the
-        next hidden gem.
-      </p>
-      <p class="leading-relaxed">
-        Fiercely competitive fantasy football manager with a borderline unhealthy level of
-        investment and an imperviousness to inevitable, annual heartbreak.
-      </p>
+      <div class="grid gap-4 sm:grid-cols-3">
+        {passions.map(({ label, body }) => (
+          <div
+            class="rounded-lg p-4"
+            style="background: var(--color-surface); border: 1px solid var(--color-border);"
+          >
+            <div
+              class="text-xs font-medium uppercase tracking-widest mb-2"
+              style="color: var(--color-accent-light);"
+            >
+              {label}
+            </div>
+            <p class="text-sm leading-relaxed">{body}</p>
+          </div>
+        ))}
+      </div>
     </section>
 
     <section class="pt-2 border-t border-[#2a2a2a]">
