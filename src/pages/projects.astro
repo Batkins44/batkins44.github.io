@@ -3,6 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const tiers = [
   {
+    tier: 0,
+    title: 'The Origin Story',
+    tool: 'Steam Deck / Linux',
+    description: 'Before any of this was intentional, I spent two years bending a Steam Deck to my will — emulation, Lutris, Bottles, Decky plugins, and whatever else I could get running on Arch Linux. This is where I learned to refuse limitations.',
+    skills: ['Linux (Arch/SteamOS)', 'Wine / Proton', 'Lutris', 'Bottles', 'Emulation', 'Decky Loader'],
+  },
+  {
     tier: 1,
     title: 'Containerization',
     tool: 'Docker',
@@ -67,51 +74,140 @@ const tiers = [
 
   <!-- Tier progression -->
   <div class="flex flex-col gap-5">
-    {tiers.map((t, i) => (
+    {tiers.map((t, i) => {
+      const inner = (
+        <>
+          <div class="tier-badge-col">
+            <span class="tier-badge">{t.tier}</span>
+            {i < tiers.length - 1 && <div class="tier-line" aria-hidden="true" />}
+          </div>
+          <div class="tier-content">
+            <div class="flex flex-wrap items-baseline gap-2 mb-1">
+              <h2
+                class="text-lg font-semibold group-hover:text-[#60a5fa] transition-colors duration-200"
+                style="font-family: var(--font-display); color: var(--color-heading);"
+              >
+                {t.title}
+              </h2>
+              <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-[#2a2a2a] text-[#60a5fa]">
+                {t.tool}
+              </span>
+            </div>
+            <p class="text-sm leading-relaxed mb-3" style="color: var(--color-body);">
+              {t.description}
+            </p>
+            <div class="flex flex-wrap gap-1.5">
+              {t.skills.map(skill => (
+                <span class="text-xs px-2.5 py-1 rounded-full bg-[#2a2a2a] text-[#d1d5db]">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+          {t.repo && (
+            <span class="tier-arrow group-hover:translate-x-1 group-hover:text-[#60a5fa] transition-all duration-200" style="color: var(--color-muted);">
+              ↗
+            </span>
+          )}
+        </>
+      );
+      return t.repo ? (
+        <a href={t.repo} target="_blank" rel="noopener noreferrer" class="tier-card group">
+          {inner}
+        </a>
+      ) : (
+        <div class="tier-card">
+          {inner}
+        </div>
+      );
+    })}
+  </div>
+
+  <!-- Side Projects -->
+  <section class="mt-10">
+    <h2
+      class="text-xs font-medium uppercase tracking-widest mb-4"
+      style="color: var(--color-muted);"
+    >
+      Side Projects
+    </h2>
+    <div class="flex flex-col gap-4">
+      <div class="border border-[#2a2a2a] rounded-lg p-5 bg-[#1a1a1a]">
+        <div class="flex flex-wrap items-baseline gap-2 mb-1">
+          <h3
+            class="text-base font-semibold"
+            style="font-family: var(--font-display); color: var(--color-heading);"
+          >
+            Gaming History Database
+          </h3>
+          <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-[#2a2a2a] text-[#60a5fa]">
+            Python
+          </span>
+        </div>
+        <p class="text-sm leading-relaxed mb-3" style="color: var(--color-body);">
+          750+ games across 20 platforms spanning 1983–2025. Python CLI tool that searches the RAWG API,
+          manages a CSV database, and auto-generates a dark-themed 23-tab Excel workbook with Metacritic
+          color coding and duplicate protection.
+        </p>
+        <div class="flex flex-wrap gap-1.5">
+          {['Python', 'RAWG API', 'openpyxl', 'CSV', 'CLI'].map(s => (
+            <span class="text-xs px-2.5 py-1 rounded-full bg-[#2a2a2a] text-[#d1d5db]">{s}</span>
+          ))}
+        </div>
+      </div>
+
+      <div class="border border-[#2a2a2a] rounded-lg p-5 bg-[#1a1a1a]">
+        <div class="flex flex-wrap items-baseline gap-2 mb-1">
+          <h3
+            class="text-base font-semibold"
+            style="font-family: var(--font-display); color: var(--color-heading);"
+          >
+            Jellyfin Media Server
+          </h3>
+          <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-[#2a2a2a] text-[#60a5fa]">
+            Self-Hosted
+          </span>
+        </div>
+        <p class="text-sm leading-relaxed mb-3" style="color: var(--color-body);">
+          Self-hosted media server running on dedicated hardware via Docker. Full library management
+          with movies, shows, and concerts — my own personal streaming service.
+        </p>
+        <div class="flex flex-wrap gap-1.5">
+          {['Docker', 'Linux', 'Networking', 'Media Management'].map(s => (
+            <span class="text-xs px-2.5 py-1 rounded-full bg-[#2a2a2a] text-[#d1d5db]">{s}</span>
+          ))}
+        </div>
+      </div>
+
       <a
-        href={t.repo}
+        href="https://github.com/Batkins44/batkins44.github.io"
         target="_blank"
         rel="noopener noreferrer"
-        class="tier-card group"
+        class="border border-[#2a2a2a] rounded-lg p-5 bg-[#1a1a1a] group block hover:border-[#2563eb] transition-all duration-200"
       >
-        <!-- Tier badge -->
-        <div class="tier-badge-col">
-          <span class="tier-badge">{t.tier}</span>
-          {i < tiers.length - 1 && <div class="tier-line" aria-hidden="true" />}
+        <div class="flex flex-wrap items-baseline gap-2 mb-1">
+          <h3
+            class="text-base font-semibold group-hover:text-[#60a5fa] transition-colors duration-200"
+            style="font-family: var(--font-display); color: var(--color-heading);"
+          >
+            This Website
+          </h3>
+          <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-[#2a2a2a] text-[#60a5fa]">
+            Astro
+          </span>
+          <span class="text-sm" style="color: var(--color-muted);">↗</span>
         </div>
-
-        <!-- Content -->
-        <div class="tier-content">
-          <div class="flex flex-wrap items-baseline gap-2 mb-1">
-            <h2
-              class="text-lg font-semibold group-hover:text-[#60a5fa] transition-colors duration-200"
-              style="font-family: var(--font-display); color: var(--color-heading);"
-            >
-              {t.title}
-            </h2>
-            <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-[#2a2a2a] text-[#60a5fa]">
-              {t.tool}
-            </span>
-          </div>
-          <p class="text-sm leading-relaxed mb-3" style="color: var(--color-body);">
-            {t.description}
-          </p>
-          <div class="flex flex-wrap gap-1.5">
-            {t.skills.map(skill => (
-              <span class="text-xs px-2.5 py-1 rounded-full bg-[#2a2a2a] text-[#d1d5db]">
-                {skill}
-              </span>
-            ))}
-          </div>
+        <p class="text-sm leading-relaxed mb-3" style="color: var(--color-body);">
+          Built from scratch with Astro and Tailwind CSS. No templates, no themes — just code.
+        </p>
+        <div class="flex flex-wrap gap-1.5">
+          {['Astro', 'Tailwind CSS', 'JavaScript', 'Vercel'].map(s => (
+            <span class="text-xs px-2.5 py-1 rounded-full bg-[#2a2a2a] text-[#d1d5db]">{s}</span>
+          ))}
         </div>
-
-        <!-- Arrow -->
-        <span class="tier-arrow group-hover:translate-x-1 group-hover:text-[#60a5fa] transition-all duration-200" style="color: var(--color-muted);">
-          ↗
-        </span>
       </a>
-    ))}
-  </div>
+    </div>
+  </section>
 
   <!-- Tools summary -->
   <section class="mt-10 border border-[#2a2a2a] rounded-lg p-6 bg-[#1a1a1a]">
@@ -122,7 +218,7 @@ const tiers = [
       Tools & Technologies
     </h2>
     <div class="flex flex-wrap gap-2">
-      {['Docker', 'Terraform', 'AWS', 'GitHub Actions', 'Ansible', 'Python', 'Flask', 'pytest', 'Git', 'WSL'].map(tool => (
+      {['Linux', 'Docker', 'Terraform', 'AWS', 'GitHub Actions', 'Ansible', 'Python', 'Flask', 'pytest', 'Git', 'WSL'].map(tool => (
         <span class="text-xs px-3 py-1.5 rounded-full bg-[#2a2a2a] text-[#d1d5db] font-medium">
           {tool}
         </span>
