@@ -3,13 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const tiers = [
   {
-    tier: 0,
-    title: 'The Origin Story',
-    tool: 'Steam Deck / Linux',
-    description: 'Before any of this was intentional, I spent two years bending a Steam Deck to my will — emulation, Lutris, Bottles, Decky plugins, and whatever else I could get running on Arch Linux. This is where I learned to refuse limitations.',
-    skills: ['Linux (Arch/SteamOS)', 'Wine / Proton', 'Lutris', 'Bottles', 'Emulation', 'Decky Loader'],
-  },
-  {
     tier: 1,
     title: 'Containerization',
     tool: 'Docker',
@@ -138,19 +131,42 @@ const tiers = [
             class="text-base font-semibold"
             style="font-family: var(--font-display); color: var(--color-heading);"
           >
-            Gaming History Database
+            API-Driven Data Pipeline
           </h3>
           <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-[#2a2a2a] text-[#60a5fa]">
             Python
           </span>
         </div>
         <p class="text-sm leading-relaxed mb-3" style="color: var(--color-body);">
-          750+ games across 20 platforms spanning 1983–2025. Python CLI tool that searches the RAWG API,
-          manages a CSV database, and auto-generates a dark-themed 23-tab Excel workbook with Metacritic
-          color coding and duplicate protection.
+          Python CLI tool that queries the RAWG REST API to catalog a personal gaming library — 750+ titles
+          across 20 platforms spanning 1983–2025. Tracks ownership and play history, auto-generates a dark-themed
+          23-tab Excel workbook with Metacritic color coding, duplicate protection, and search.
         </p>
         <div class="flex flex-wrap gap-1.5">
-          {['Python', 'RAWG API', 'openpyxl', 'CSV', 'CLI'].map(s => (
+          {['Python', 'REST API', 'openpyxl', 'CSV', 'CLI', 'Data Management'].map(s => (
+            <span class="text-xs px-2.5 py-1 rounded-full bg-[#2a2a2a] text-[#d1d5db]">{s}</span>
+          ))}
+        </div>
+      </div>
+
+      <div class="border border-[#2a2a2a] rounded-lg p-5 bg-[#1a1a1a]">
+        <div class="flex flex-wrap items-baseline gap-2 mb-1">
+          <h3
+            class="text-base font-semibold"
+            style="font-family: var(--font-display); color: var(--color-heading);"
+          >
+            Steam Deck Linux Customization
+          </h3>
+          <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-[#2a2a2a] text-[#60a5fa]">
+            Arch Linux
+          </span>
+        </div>
+        <p class="text-sm leading-relaxed mb-3" style="color: var(--color-body);">
+          Two years of bending a Steam Deck to my will — emulation, Lutris, Bottles, Decky plugins,
+          and whatever else I could get running on Arch Linux. Where I learned to refuse limitations.
+        </p>
+        <div class="flex flex-wrap gap-1.5">
+          {['Linux (Arch/SteamOS)', 'Wine / Proton', 'Lutris', 'Bottles', 'Emulation', 'Decky Loader'].map(s => (
             <span class="text-xs px-2.5 py-1 rounded-full bg-[#2a2a2a] text-[#d1d5db]">{s}</span>
           ))}
         </div>
