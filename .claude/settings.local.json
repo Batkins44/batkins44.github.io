@@ -14,7 +14,11 @@
       "Bash(curl:*)",
       "Bash(ls:*)",
       "WebFetch(domain:commons.wikimedia.org)",
-      "Bash(git push -u origin claude/website-review-g6xfo)"
+      "Bash(git push -u origin claude/website-review-g6xfo)",
+      "Bash(npx astro:*)",
+      "Bash(gh pr:*)",
+      "WebSearch",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }
