@@ -85,6 +85,24 @@ ROSTER = {
     "archive":     ("The Ben in the Archive", "slightly dusty and faded, a single cobweb on one shoulder, the infinitely patient expression of someone who has been waiting eighteen months to be read, a manila folder tab poking up behind his head"),
 }
 
+# The live registry is portraits/traits.json in the canon repo (the Ben
+# Generator appends new Bens there); the dict above is the founding record
+# and offline fallback. CITADEL_CANON overrides the canon path, same as
+# sync-citadel.mjs.
+CANON = Path(
+    os.environ.get("CITADEL_CANON")
+    or Path.home() / ".claude" / "skills" / "citadel-of-bens" / "canon"
+)
+_traits = CANON / "portraits" / "traits.json"
+if _traits.exists():
+    import json
+    _data = json.loads(_traits.read_text(encoding="utf-8-sig"))
+    ROSTER.update({
+        slug: (e["name"], e["trait"])
+        for slug, e in _data.items()
+        if isinstance(e, dict) and "name" in e and "trait" in e
+    })
+
 ATTEMPTS = 3          # retries per Ben when a response comes back imageless
 PAUSE = 5             # seconds between calls; preview models have tight RPM
 
