@@ -33,3 +33,16 @@ const sessions = path.join(canon, 'sessions');
 for (const f of fs.readdirSync(sessions).filter((f) => f.endsWith('.md'))) {
   copy(path.join(sessions, f), path.join(dest, 'sessions', f));
 }
+
+// Portraits ride along too — the canon repo is the source for faces, so a
+// generated Ben reaches the site without anyone touching this repo by hand.
+// (Pending Bens' portraits land here early; harmless — the roster page only
+// shows Bens who are in ROSTER.md.)
+const portraits = path.join(canon, 'portraits');
+if (fs.existsSync(portraits)) {
+  const bens = path.resolve('public/citadel/bens');
+  fs.mkdirSync(bens, { recursive: true });
+  for (const f of fs.readdirSync(portraits).filter((f) => f.endsWith('.png'))) {
+    copy(path.join(portraits, f), path.join(bens, f));
+  }
+}
