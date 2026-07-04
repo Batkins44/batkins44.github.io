@@ -3,3 +3,7 @@
 node_modules/
 dist/
 .astro/
+
+# local art masters (2K originals, alt sets) — web-sized copies live in public/
+art-archive/
+__pycache__/
