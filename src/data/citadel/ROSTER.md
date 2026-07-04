@@ -48,14 +48,14 @@ okay. Nothing due before Friday."), not a lab report. To him, stale data isn't
 neutral — it's an accusation. The council's conscience on emotional UX. *Debut:
 Session 001.*
 
-**Demo Ben** — builds beautiful apps and shows them to people but never uses
+**Portfolio Ben** — builds beautiful apps and shows them to people but never uses
 them; polishes pixels on forms nobody fills in. Uncomfortably self-aware:
 "I was the user the whole time — the user of *building* it." Speaks last,
 ruins everyone's evening with honesty. *Debut: Session 001.* *(Development,
 S002: built the one-tap snooze, opened the app six times the week he shipped
 it — "It's been eleven days.")*
 
-**Turtle Ben** — seventeen documented Day 1s across Todoist, Notion, Bear, and
+**Day One Ben** — seventeen documented Day 1s across Todoist, Notion, Bear, and
 whatever he redownloaded this morning. Genuine excitement every time: "This
 time is different." **Running gag: he has never been here before; he has
 always been here before.** The canonical warning label on any opens-based
@@ -66,12 +66,12 @@ than it gives; every open is another reminder he's failing. Doesn't want a
 better dashboard, wants a break. The council's proof that sometimes the kindest
 feature is silence. *Debut: Session 002 (invented by Kyle's chamber).*
 
-**Narrative Ben** — experiences the multiverse as an unfolding story and is
+**Lore Ben** — experiences the multiverse as an unfolding story and is
 already editing his own entry in his head. Will accept structure but never
 management: "a UI polices creativity." Speaks of the other Bens in the third
 person, including himself. *Debut: Session 003 (invented by Kyle's chamber).*
 
-**The Ben in the Archive** — written eighteen months ago, read twice: once at
+**Unread Ben** — written eighteen months ago, read twice: once at
 creation, once to draft the motion against him. Already persistent and
 completely ignored; living proof that the data format is not the problem.
 **Running gag: pauses, and the pause is the argument.** *Debut: Session 003
@@ -108,3 +108,11 @@ completely ignored; living proof that the data format is not the problem.
   `bens`. Primary key `id`. It compiles."), tipped his hat, gone before the
   first testimony. Jim's chamber recorded his vote as "abstain (was he ever
   here)." Gag intact.
+- **Portfolio Ben** — 2026-07-04: renamed from Demo Ben (Ben's call — he
+  builds for the artifact, not the use). Soul unchanged.
+- **Day One Ben** — 2026-07-04: renamed from Turtle Ben. It was always his
+  true name; his portrait had been saying it the whole time.
+- **Unread Ben** — 2026-07-04: renamed from The Ben in the Archive. The
+  archive was never the problem either.
+- **Lore Ben** — 2026-07-04: renamed from Narrative Ben. He is reportedly
+  pleased with the edit, which he claims he suggested.
