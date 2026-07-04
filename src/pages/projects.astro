@@ -1,0 +1,308 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const tiers = [
+  {
+    tier: 1,
+    title: 'Containerization',
+    tool: 'Docker',
+    repo: 'https://github.com/Batkins44/jellyfin-docker',
+    description: 'Jellyfin media server running on a dedicated Asus machine via Docker Compose.',
+    skills: ['Docker', 'Docker Compose', 'Volume Mounts', 'Networking'],
+  },
+  {
+    tier: 2,
+    title: 'Infrastructure as Code',
+    tool: 'Terraform + AWS',
+    repo: 'https://github.com/Batkins44/terraform-aws-webserver',
+    description: 'Terraform config that provisions a free-tier EC2 instance running Apache, with full create/destroy/rebuild cycle.',
+    skills: ['Terraform', 'AWS EC2', 'Security Groups', 'IaC', 'State Management'],
+  },
+  {
+    tier: 3,
+    title: 'CI/CD',
+    tool: 'GitHub Actions',
+    repo: 'https://github.com/Batkins44/flask-ci-pipeline',
+    description: 'Flask API with automated GitHub Actions pipeline — runs tests on every push, builds and verifies Docker image.',
+    skills: ['GitHub Actions', 'CI/CD Pipelines', 'pytest', 'Automated Testing'],
+  },
+  {
+    tier: 4,
+    title: 'Configuration Management',
+    tool: 'Ansible',
+    repo: 'https://github.com/Batkins44/ansible-web-config',
+    description: 'Ansible playbook that installs nginx, deploys a custom homepage, and verifies the server responds — all idempotently.',
+    skills: ['Ansible', 'Playbooks', 'Inventory Management', 'Idempotent Config'],
+  },
+  {
+    tier: 5,
+    title: 'Full Pipeline',
+    tool: 'All Combined',
+    repo: 'https://github.com/Batkins44/devops-full-pipeline',
+    description: 'One deploy script that provisions EC2 with Terraform, then uses Ansible to SSH in, install Docker, build a Flask app, and run it — with GitHub Actions CI on every push.',
+    skills: ['Terraform', 'Ansible', 'Docker', 'GitHub Actions', 'End-to-End Automation'],
+  },
+];
+---
+
+<BaseLayout
+  title="Projects"
+  description="Ben Atkins' hands-on DevOps portfolio — a 5-tier learning path from containers to full pipeline automation."
+>
+  <header class="mb-10">
+    <h1
+      class="text-4xl font-bold mb-3"
+      style="font-family: var(--font-display); color: var(--color-heading);"
+    >
+      Projects
+    </h1>
+    <p class="leading-relaxed" style="color: var(--color-muted);">
+      A 5-tier DevOps learning path I built hands-on. Each tier builds on the last —
+      from running a single container to a fully automated cloud pipeline.
+    </p>
+    <p class="text-sm mt-2" style="color: var(--color-muted);">
+      The core concept: I can destroy and recreate my entire environment in minutes.
+    </p>
+  </header>
+
+  <!-- Tier progression -->
+  <div class="flex flex-col gap-5">
+    {tiers.map((t, i) => {
+      const inner = (
+        <>
+          <div class="tier-badge-col">
+            <span class="tier-badge">{t.tier}</span>
+            {i < tiers.length - 1 && <div class="tier-line" aria-hidden="true" />}
+          </div>
+          <div class="tier-content">
+            <div class="flex flex-wrap items-baseline gap-2 mb-1">
+              <h2
+                class="text-lg font-semibold group-hover:text-[#60a5fa] transition-colors duration-200"
+                style="font-family: var(--font-display); color: var(--color-heading);"
+              >
+                {t.title}
+              </h2>
+              <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-[#2a2a2a] text-[#60a5fa]">
+                {t.tool}
+              </span>
+            </div>
+            <p class="text-sm leading-relaxed mb-3" style="color: var(--color-body);">
+              {t.description}
+            </p>
+            <div class="flex flex-wrap gap-1.5">
+              {t.skills.map(skill => (
+                <span class="text-xs px-2.5 py-1 rounded-full bg-[#2a2a2a] text-[#d1d5db]">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+          {t.repo && (
+            <span class="tier-arrow group-hover:translate-x-1 group-hover:text-[#60a5fa] transition-all duration-200" style="color: var(--color-muted);">
+              ↗
+            </span>
+          )}
+        </>
+      );
+      return t.repo ? (
+        <a href={t.repo} target="_blank" rel="noopener noreferrer" class="tier-card group">
+          {inner}
+        </a>
+      ) : (
+        <div class="tier-card">
+          {inner}
+        </div>
+      );
+    })}
+  </div>
+
+  <!-- Side Projects -->
+  <section class="mt-10">
+    <h2
+      class="text-xs font-medium uppercase tracking-widest mb-4"
+      style="color: var(--color-muted);"
+    >
+      Side Projects
+    </h2>
+    <div class="flex flex-col gap-4">
+      <div class="border border-[#2a2a2a] rounded-lg p-5 bg-[#1a1a1a]">
+        <div class="flex flex-wrap items-baseline gap-2 mb-1">
+          <h3
+            class="text-base font-semibold"
+            style="font-family: var(--font-display); color: var(--color-heading);"
+          >
+            API-Driven Data Pipeline
+          </h3>
+          <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-[#2a2a2a] text-[#60a5fa]">
+            Python
+          </span>
+        </div>
+        <p class="text-sm leading-relaxed mb-3" style="color: var(--color-body);">
+          Python CLI tool that queries the RAWG REST API to catalog a personal gaming library — 750+ titles
+          across 20 platforms spanning 1983–2025. Tracks ownership and play history, auto-generates a dark-themed
+          23-tab Excel workbook with Metacritic color coding, duplicate protection, and search.
+        </p>
+        <div class="flex flex-wrap gap-1.5">
+          {['Python', 'REST API', 'openpyxl', 'CSV', 'CLI', 'Data Management'].map(s => (
+            <span class="text-xs px-2.5 py-1 rounded-full bg-[#2a2a2a] text-[#d1d5db]">{s}</span>
+          ))}
+        </div>
+      </div>
+
+      <div class="border border-[#2a2a2a] rounded-lg p-5 bg-[#1a1a1a]">
+        <div class="flex flex-wrap items-baseline gap-2 mb-1">
+          <h3
+            class="text-base font-semibold"
+            style="font-family: var(--font-display); color: var(--color-heading);"
+          >
+            Steam Deck Linux Customization
+          </h3>
+          <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-[#2a2a2a] text-[#60a5fa]">
+            Arch Linux
+          </span>
+        </div>
+        <p class="text-sm leading-relaxed mb-3" style="color: var(--color-body);">
+          Two years of bending a Steam Deck to my will — emulation, Lutris, Bottles, Decky plugins,
+          and whatever else I could get running on Arch Linux. Where I learned to refuse limitations.
+        </p>
+        <div class="flex flex-wrap gap-1.5">
+          {['Linux (Arch/SteamOS)', 'Wine / Proton', 'Lutris', 'Bottles', 'Emulation', 'Decky Loader'].map(s => (
+            <span class="text-xs px-2.5 py-1 rounded-full bg-[#2a2a2a] text-[#d1d5db]">{s}</span>
+          ))}
+        </div>
+      </div>
+
+      <div class="border border-[#2a2a2a] rounded-lg p-5 bg-[#1a1a1a]">
+        <div class="flex flex-wrap items-baseline gap-2 mb-1">
+          <h3
+            class="text-base font-semibold"
+            style="font-family: var(--font-display); color: var(--color-heading);"
+          >
+            Jellyfin Media Server
+          </h3>
+          <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-[#2a2a2a] text-[#60a5fa]">
+            Self-Hosted
+          </span>
+        </div>
+        <p class="text-sm leading-relaxed mb-3" style="color: var(--color-body);">
+          Self-hosted media server running on dedicated hardware via Docker. Full library management
+          with movies, shows, and concerts — my own personal streaming service.
+        </p>
+        <div class="flex flex-wrap gap-1.5">
+          {['Docker', 'Linux', 'Networking', 'Media Management'].map(s => (
+            <span class="text-xs px-2.5 py-1 rounded-full bg-[#2a2a2a] text-[#d1d5db]">{s}</span>
+          ))}
+        </div>
+      </div>
+
+      <a
+        href="https://github.com/Batkins44/batkins44.github.io"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="border border-[#2a2a2a] rounded-lg p-5 bg-[#1a1a1a] group block hover:border-[#2563eb] transition-all duration-200"
+      >
+        <div class="flex flex-wrap items-baseline gap-2 mb-1">
+          <h3
+            class="text-base font-semibold group-hover:text-[#60a5fa] transition-colors duration-200"
+            style="font-family: var(--font-display); color: var(--color-heading);"
+          >
+            This Website
+          </h3>
+          <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-[#2a2a2a] text-[#60a5fa]">
+            Astro
+          </span>
+          <span class="text-sm" style="color: var(--color-muted);">↗</span>
+        </div>
+        <p class="text-sm leading-relaxed mb-3" style="color: var(--color-body);">
+          Built from scratch with Astro and Tailwind CSS. No templates, no themes — just code.
+        </p>
+        <div class="flex flex-wrap gap-1.5">
+          {['Astro', 'Tailwind CSS', 'JavaScript', 'Vercel'].map(s => (
+            <span class="text-xs px-2.5 py-1 rounded-full bg-[#2a2a2a] text-[#d1d5db]">{s}</span>
+          ))}
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Tools summary -->
+  <section class="mt-10 border border-[#2a2a2a] rounded-lg p-6 bg-[#1a1a1a]">
+    <h2
+      class="text-xs font-medium uppercase tracking-widest mb-4"
+      style="color: var(--color-muted);"
+    >
+      Tools & Technologies
+    </h2>
+    <div class="flex flex-wrap gap-2">
+      {['Linux', 'Docker', 'Terraform', 'AWS', 'GitHub Actions', 'Ansible', 'Python', 'Flask', 'pytest', 'Git', 'WSL'].map(tool => (
+        <span class="text-xs px-3 py-1.5 rounded-full bg-[#2a2a2a] text-[#d1d5db] font-medium">
+          {tool}
+        </span>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tier-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border: 1px solid #2a2a2a;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    background: #1a1a1a;
+    text-decoration: none;
+    transition: border-color 0.25s, transform 0.2s ease, box-shadow 0.25s;
+  }
+
+  .tier-card:hover {
+    border-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
+  }
+
+  .tier-badge-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    padding-top: 0.15rem;
+  }
+
+  .tier-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2563eb, #1e3a8a);
+    color: #f5f5f5;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .tier-line {
+    width: 2px;
+    flex: 1;
+    min-height: 1rem;
+    background: linear-gradient(180deg, #2563eb 0%, transparent 100%);
+    margin-top: 0.5rem;
+    border-radius: 999px;
+    opacity: 0.4;
+  }
+
+  .tier-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .tier-arrow {
+    flex-shrink: 0;
+    font-size: 1.1rem;
+    margin-top: 0.2rem;
+  }
+</style>

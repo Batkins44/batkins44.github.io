@@ -13,14 +13,14 @@ const navCards = [
     description: '6+ years in enterprise IT.',
   },
   {
+    href: '/projects',
+    label: 'Projects',
+    description: 'A 5-tier DevOps portfolio, built from scratch.',
+  },
+  {
     href: '/now',
     label: 'Now',
     description: "What I'm currently playing, watching, obsessing over.",
-  },
-  {
-    href: '/contact',
-    label: 'Contact',
-    description: "I promise I'm friendly!",
   },
 ];
 ---
@@ -37,9 +37,7 @@ const navCards = [
           <span class="hero-name-fill">Atkins</span>
         </h1>
         <p class="text-xl leading-relaxed mb-4" style="color: var(--color-body);">
-          IT Support &amp; SysAdmin.
-          <br /><br />
-          Proudly never outgrew video games. Fueled by indie music, coffee, and the outdoors. Perpetually fascinated by psychology. Occasional photographer.
+          6+ years keeping enterprise IT running. Active Directory, Entra, M365, and Azure at the core — with PowerShell automation, Python scripting, and AI tooling increasingly in the mix. Building toward DevOps.
         </p>
       </div>
     </div>
@@ -98,9 +96,9 @@ const navCards = [
     ))}
   </section>
 
-  <!-- Quote -->
-  <p id="mindfulness-quote" class="mb-10" style="color: var(--color-muted); transition: opacity 0.6s ease; min-height: 1.5em;">
-    &nbsp;
+  <!-- Contact text link -->
+  <p class="contact-cta mb-10">
+    Want to chat? <a href="/contact" class="contact-link">Say hello</a> — I promise I'm friendly.
   </p>
 
   <!-- Gradient divider -->
@@ -111,6 +109,11 @@ const navCards = [
     <img src="/images/home/gc1.jpg" alt="Horseshoe Bend, Arizona" class="photo-banner" />
     <p class="photo-caption">Horseshoe Bend, Arizona, 2026</p>
   </section>
+
+  <!-- Quote -->
+  <p id="mindfulness-quote" class="mt-10" style="color: var(--color-muted); transition: opacity 0.6s ease; min-height: 1.5em;">
+    &nbsp;
+  </p>
 </BaseLayout>
 
 <style>
@@ -156,16 +159,12 @@ const navCards = [
   }
 
   .hero-name-ghost {
-    -webkit-text-stroke: 2px #93c5fd;
-    color: transparent;
+    color: var(--color-heading);
     margin-right: 0.2em;
   }
 
   .hero-name-fill {
-    background: linear-gradient(135deg, #93c5fd 0%, #2563eb 45%, #1e3a8a 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-heading);
   }
 
   /* Thin gradient line between hero and cards */
@@ -237,6 +236,23 @@ const navCards = [
     line-height: 1.5;
     color: var(--color-muted);
     position: relative;
+  }
+
+  /* Contact CTA text link */
+  .contact-cta {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+  }
+
+  .contact-link {
+    color: var(--color-accent-light);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+  }
+
+  .contact-link:hover {
+    color: var(--color-heading);
   }
 
   /* Photo banner */

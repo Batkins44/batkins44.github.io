@@ -1,29 +1,29 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const lastUpdated = 'February 2026';
+const lastUpdated = 'March 2026';
 
 const games = [
-  { name: 'Arc Raiders',   img: '/images/now/arc-raiders.jpg',   note: 'still deep in this one' },
-  { name: 'Silksong',      img: '/images/now/silksong.jpg',      note: 'the wait is finally over' },
-  { name: 'Rocket League', img: '/images/now/rocket-league.jpg', note: 'the eternal rotation' },
-  { name: 'The First Berserker: Khazan', img: '/images/now/khazan.jpg', note: '' },
-  { name: 'Brotato',       img: '/images/now/brotato.jpg',       note: 'perfect between-games game' },
-  { name: 'Hades II',      img: '/images/now/hades2.jpg',       note: '' },
+  { name: 'Silksong',             img: '/images/now/silksong.jpg',             note: '' },
+  { name: 'Hades II',             img: '/images/now/hades2.jpg',              note: '' },
+  { name: 'Ultros',               img: '/images/now/ultros.jpg',              note: '' },
+  { name: 'Slay the Spire II',    img: '/images/now/slay-the-spire-2.jpg',   note: '' },
+  { name: 'MIO: Memories in Orbit', img: '/images/now/mio-memories-in-orbit.jpg', note: '' },
+  { name: 'Rocket League',  img: '/images/now/rocket-league.jpg',  note: '' },
 ];
 
 const shows = [
   { name: 'One Battle After Another', img: '/images/now/one-battle.jpg' },
   { name: 'Pluribus',                 img: '/images/now/pluribus.jpg' },
-  { name: 'Fallout',                  img: '/images/now/fallout.jpg' },
-  { name: 'What We Do in the Shadows', img: '/images/now/wwdits.png' },
+  { name: 'Arrested Development',     img: '/images/now/arrested-development.jpg' },
+  { name: 'Ted Lasso',                img: '/images/now/ted-lasso.jpg' },
 ];
 
 const artists = [
-  { name: 'Washed Out', img: '/images/now/washed-out.png' },
-  { name: 'Panda Bear', img: '/images/now/panda-bear.png' },
-  { name: 'MF DOOM',    img: '/images/now/mf-doom.png' },
-  { name: 'Gorillaz',   img: '/images/now/gorillaz.png' },
+  { name: 'Washed Out',    img: '/images/now/washed-out.png' },
+  { name: 'Gorillaz',      img: '/images/now/gorillaz.png' },
+  { name: 'Black Thought',  img: '/images/now/black-thought.png' },
+  { name: 'Robyn',          img: '/images/now/robyn.png' },
 ];
 ---
 
@@ -54,24 +54,6 @@ const artists = [
       >
         <span class="text-lg">🎮</span> Playing
       </h2>
-
-      <!-- Highlight clip -->
-      <div class="mb-4 relative overflow-hidden rounded-lg border border-[#2a2a2a]">
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          class="w-full rounded-lg"
-        >
-          <source src="/images/now/best-goal.mp4" type="video/mp4" />
-        </video>
-        <div class="absolute bottom-0 left-0 right-0 px-3 py-2 bg-gradient-to-t from-black/80 to-transparent">
-          <p class="text-xs font-medium text-[#60a5fa]" style="font-family: var(--font-display);">
-            🚀 Recent highlight — Rocket League
-          </p>
-        </div>
-      </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
         {games.map(game => (

@@ -21,8 +21,8 @@ const passions = [
     body: "Indie rock, pop, and hip-hop. Always digging for the next hidden gem and rarely satisfied with whatever's on the radio.",
   },
   {
-    label: 'Fantasy Football',
-    body: 'Fiercely competitive manager with a borderline unhealthy level of investment and a well-documented imperviousness to annual heartbreak.',
+    label: 'Psychology',
+    body: "Degree in it, never stopped thinking about it. Understanding how people think is the most underrated skill in IT — and probably everywhere else.",
   },
 ];
 ---
@@ -45,9 +45,9 @@ const passions = [
   <!-- Stats row -->
   <div class="grid grid-cols-3 gap-4 mb-12">
     {[
-      { value: '6', label: 'Years in IT' },
-      { value: '2', label: 'Industries' },
-      { value: 'NSS', label: 'Bootcamp Grad' },
+      { value: '6+', label: 'Years in IT' },
+      { value: '900+', label: 'Users Supported' },
+      { value: '50+', label: 'Facilities Served' },
     ].map(({ value, label }) => (
       <div
         class="rounded-lg p-4 text-center"
@@ -77,17 +77,12 @@ const passions = [
         Career
       </h2>
       <p class="leading-relaxed mb-3">
-        Six years of IT support and systems administration experience spanning healthcare (VUMC)
-        and financial services (LBMC), with consistent delivery across varying compliance frameworks
-        and operational demands.
+        Six years across healthcare and financial services — Vanderbilt Medical Center and LBMC.
+        I've owned onboarding for 900 users, covered 50+ facilities across Middle Tennessee,
+        led an O365 migration, built PowerShell automations, and coordinated SOC 2 audits.
+        Now building toward DevOps.
       </p>
-      <p class="leading-relaxed mb-6">
-        Core competencies include identity and access management, M365/Azure administration,
-        endpoint lifecycle management, hardware deployment, PowerShell automation, and SOC 2
-        compliance coordination. Supplemental front-end development skills enable me to build
-        solutions proactively, not just resolve issues reactively.
-      </p>
-      <div class="flex flex-wrap gap-2">
+      <div class="flex flex-wrap gap-2 mb-4">
         {skills.map((skill) => (
           <span
             class="text-xs px-3 py-1 rounded-full"
@@ -97,6 +92,9 @@ const passions = [
           </span>
         ))}
       </div>
+      <a href="/career" class="text-sm text-[#60a5fa] underline hover:text-[#2563eb] transition-colors duration-200">
+        Full career details →
+      </a>
     </section>
 
     <!-- Background -->
@@ -108,23 +106,18 @@ const passions = [
         Background
       </h2>
       <p class="leading-relaxed mb-3">
-        Nashville native. B.A. in Psychology with a minor in Business Administration from the
-        University of Tennessee. Started my career in healthcare, where working directly with
-        patients and staff built a strong foundation in communication and customer service.
+        Nashville native. Psychology degree from UT, started in healthcare working directly with
+        patients and staff. Got hooked on the technical side — how systems worked, how they
+        could be better — and committed to the switch.
       </p>
       <p class="leading-relaxed mb-3">
-        While working in healthcare, I found myself increasingly drawn to the technical side of
-        how systems worked and how they could be improved. Pondering a career change, I took
-        courses in Python and web development at Red Rocks Community College.
-      </p>
-      <p class="leading-relaxed mb-3">
-        Once I officially decided to pursue a career in tech, I moved back to Nashville and
-        committed fully, completing Nashville Software School's full-stack web development bootcamp
-        in 2017 with extensive training in JavaScript, React, and modern development practices.
+        Studied Python and web development at Red Rocks Community College, then moved back to
+        Nashville for Nashville Software School's bootcamp (first cohort for the UI/UX emphasis).
+        Went straight into enterprise IT and haven't looked back.
       </p>
       <p class="leading-relaxed">
-        Upon entering the IT field shortly after, each role has been a continuous education: new
-        tools, new challenges, new ways to grow.
+        The psychology background wasn't a detour — it's why I'm good at this. Understanding
+        people makes you better at supporting them.
       </p>
     </section>
 
