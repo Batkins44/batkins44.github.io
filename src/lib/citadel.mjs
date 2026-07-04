@@ -21,6 +21,13 @@ const SLUG_MAP = {
   // Session 003 inductees — "The Ben in the Archive" needs the alias (the
   // auto rule would yield "the-in-the-archive"); Narrative Ben auto-slugs fine.
   'the ben in the archive': 'archive',
+  // 2026-07-04 renames — new display names resolve to the original slugs;
+  // the old names above stay so past (immutable) transcripts keep their faces.
+  'portfolio ben': 'demo',
+  'day one ben': 'turtle',
+  'day-one ben': 'turtle',
+  'unread ben': 'archive',
+  'lore ben': 'narrative',
 };
 
 export function slugFor(name) {
