@@ -1,0 +1,508 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { parseSession, initials } from '../../lib/citadel.mjs';
+
+export function getStaticPaths() {
+  const files = import.meta.glob('../../data/citadel/sessions/*.md', {
+    query: '?raw',
+    import: 'default',
+    eager: true,
+  });
+  return Object.entries(files).map(([p, raw]) => ({
+    params: { session: path.basename(p, '.md') },
+    props: { raw },
+  }));
+}
+
+const { session } = Astro.params;
+const { raw } = Astro.props;
+const s = parseSession(raw, session);
+
+// Portrait availability: idle set + optional "live" (speaking) set.
+const readSlugs = (dir) => {
+  try {
+    return new Set(
+      fs.readdirSync(path.resolve(dir)).filter((f) => f.endsWith('.png')).map((f) => f.replace(/\.png$/, ''))
+    );
+  } catch {
+    return new Set();
+  }
+};
+const portraits = readSlugs('public/citadel/bens');
+const livePortraits = readSlugs('public/citadel/bens/live');
+---
+
+<BaseLayout
+  title={`Council of Bens — Session ${s.number.padStart(3, '0')}: ${s.topic}`}
+  description={`The Council of Bens rules on: ${s.motion}`}
+  orbColor="rgba(34, 211, 238, 0.14)"
+>
+  <nav class="mb-6 text-sm">
+    <a href="/council/" class="text-[#60a5fa] hover:text-[#22d3ee] transition-colors">← The Council</a>
+  </nav>
+
+  <header class="mb-8">
+    <p class="text-xs font-medium uppercase tracking-widest mb-2" style="color: var(--color-muted);">
+      Session {s.number.padStart(3, '0')} · {s.date}
+    </p>
+    <h1
+      class="text-3xl font-bold mb-4"
+      style="font-family: var(--font-display); color: var(--color-heading);"
+    >
+      {s.topic}
+    </h1>
+    <blockquote class="motion-quote">
+      <span class="text-xs font-medium uppercase tracking-widest block mb-1" style="color: var(--color-muted);">The Motion</span>
+      “{s.motion}”
+    </blockquote>
+    {s.chambers && (
+      <p class="text-sm mt-3" style="color: var(--color-muted);">Chambers: {s.chambers}</p>
+    )}
+  </header>
+
+  <!-- The seated council -->
+  {s.cast.length > 0 && (
+    <div class="flex flex-wrap gap-2 mb-8" aria-label="Seated Bens">
+      {s.cast.map((ben) => (
+        <span class="seat-chip">
+          {portraits.has(ben.slug) ? (
+            <img src={`/citadel/bens/${ben.slug}.png`} alt="" width="28" height="28" loading="lazy" />
+          ) : (
+            <span class="seat-initials" aria-hidden="true">{initials(ben.name)}</span>
+          )}
+          {ben.name}
+        </span>
+      ))}
+    </div>
+  )}
+
+  <!-- Player controls (JS upgrades these; page reads fine without) -->
+  <div class="controls" id="controls">
+    <button type="button" id="btn-tableread" class="ctl ctl-primary">▶ Table read</button>
+    <button type="button" id="btn-next" class="ctl" hidden>Next line</button>
+    <button type="button" id="btn-showall" class="ctl" hidden>Show all</button>
+    <span class="ctl-hint" id="ctl-hint" hidden>space / → / click to advance</span>
+  </div>
+
+  <!-- Testimony -->
+  <section class="mb-10" id="transcript">
+    <h2 class="text-xs font-medium uppercase tracking-widest mb-5" style="color: var(--color-muted);">
+      Testimony
+    </h2>
+    {s.items.map((it) => {
+      if (it.type === 'chamber')
+        return <h3 class="chamber-head seq" set:html={it.html} />;
+      if (it.type === 'direction')
+        return <p class="direction seq" set:html={it.html} />;
+      if (it.type === 'para')
+        return <p class="direction seq" set:html={it.html} />;
+      return (
+        <div
+          class="cline seq"
+          data-slug={it.slug}
+          data-live={livePortraits.has(it.slug) ? '1' : undefined}
+        >
+          {portraits.has(it.slug) ? (
+            <img
+              class="cface"
+              src={`/citadel/bens/${it.slug}.png`}
+              alt={`${it.name} — portrait`}
+              width="64"
+              height="64"
+              loading="lazy"
+            />
+          ) : (
+            <span class="cface cface-missing" aria-hidden="true">{initials(it.name)}</span>
+          )}
+          <div class="cbody">
+            <span class="cname">
+              {it.name}
+              {it.chamber && <em class="cchamber">{it.chamber} chamber</em>}
+            </span>
+            <p class="ctext" set:html={it.html} />
+          </div>
+        </div>
+      );
+    })}
+  </section>
+
+  <!-- The Vote -->
+  {s.voteHtml && (
+    <section class="mb-10 vote-section seq-section">
+      <h2 class="text-xs font-medium uppercase tracking-widest mb-4" style="color: var(--color-muted);">
+        The Vote
+      </h2>
+      <div class="vote-body" set:html={s.voteHtml} />
+    </section>
+  )}
+
+  <!-- Truth Payload -->
+  {s.payloadHtml && (
+    <section class="mb-10 seq-section">
+      <h2 class="text-xs font-medium uppercase tracking-widest mb-4" style="color: var(--color-muted);">
+        Truth Payload
+      </h2>
+      <blockquote class="payload" set:html={s.payloadHtml} />
+    </section>
+  )}
+
+  <!-- Ruling & Plan -->
+  {s.rulingHtml && (
+    <section class="mb-10 seq-section">
+      <h2 class="text-xs font-medium uppercase tracking-widest mb-4" style="color: var(--color-muted);">
+        Ruling &amp; Plan
+      </h2>
+      <div class="ruling" set:html={s.rulingHtml} />
+    </section>
+  )}
+
+  <!-- Inductions -->
+  {s.inductionsHtml && (
+    <section class="mb-10 seq-section">
+      <h2 class="text-xs font-medium uppercase tracking-widest mb-4" style="color: var(--color-muted);">
+        Inductions
+      </h2>
+      <div class="ruling" set:html={s.inductionsHtml} />
+    </section>
+  )}
+</BaseLayout>
+
+<script>
+  // Table-read mode: progressive enhancement over the fully rendered
+  // transcript. Reveals testimony beat by beat; the speaking Ben's portrait
+  // pops (and swaps to a "live" variant when one exists on disk).
+  const seq = Array.from(document.querySelectorAll('.seq'));
+  const tail = Array.from(document.querySelectorAll('.seq-section'));
+  const btnStart = document.getElementById('btn-tableread');
+  const btnNext = document.getElementById('btn-next');
+  const btnAll = document.getElementById('btn-showall');
+  const hint = document.getElementById('ctl-hint');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let i = -1;
+  let active = false;
+  let currentLine = null;
+
+  function setSpeaking(el, on) {
+    if (!el) return;
+    el.classList.toggle('speaking', on);
+    const img = el.querySelector('img.cface');
+    if (img && el.dataset.live === '1') {
+      const slug = el.dataset.slug;
+      img.src = on ? `/citadel/bens/live/${slug}.png` : `/citadel/bens/${slug}.png`;
+    }
+    if (on && img && !reduced) {
+      img.classList.remove('pop');
+      void img.offsetWidth; // restart the animation
+      img.classList.add('pop');
+    }
+  }
+
+  function reveal() {
+    if (!active) return;
+    i += 1;
+    if (i >= seq.length) return showAll();
+    const el = seq[i];
+    el.classList.remove('hidden-beat');
+    if (el.classList.contains('cline')) {
+      setSpeaking(currentLine, false);
+      currentLine = el;
+      setSpeaking(el, true);
+    }
+    el.scrollIntoView({ block: 'center', behavior: reduced ? 'auto' : 'smooth' });
+  }
+
+  function start() {
+    active = true;
+    i = -1;
+    currentLine = null;
+    seq.forEach((el) => {
+      el.classList.add('hidden-beat');
+      el.classList.remove('speaking');
+    });
+    tail.forEach((el) => el.classList.add('hidden-beat'));
+    btnStart.hidden = true;
+    btnNext.hidden = false;
+    btnAll.hidden = false;
+    hint.hidden = false;
+    reveal();
+  }
+
+  function showAll() {
+    active = false;
+    seq.forEach((el) => el.classList.remove('hidden-beat'));
+    tail.forEach((el) => el.classList.remove('hidden-beat'));
+    setSpeaking(currentLine, false);
+    currentLine = null;
+    btnStart.hidden = false;
+    btnNext.hidden = true;
+    btnAll.hidden = true;
+    hint.hidden = true;
+  }
+
+  btnStart?.addEventListener('click', start);
+  btnNext?.addEventListener('click', reveal);
+  btnAll?.addEventListener('click', showAll);
+  document.getElementById('transcript')?.addEventListener('click', (e) => {
+    if (active && !(e.target instanceof HTMLAnchorElement)) reveal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!active) return;
+    if (e.key === ' ' || e.key === 'ArrowRight') {
+      e.preventDefault();
+      reveal();
+    }
+    if (e.key === 'Escape') showAll();
+  });
+</script>
+
+<style>
+  .motion-quote {
+    border-left: 3px solid #22d3ee;
+    padding: 0.75rem 1.25rem;
+    background: #1a1a1a;
+    border-radius: 0 0.5rem 0.5rem 0;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--color-heading);
+  }
+
+  .seat-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.78rem;
+    padding: 0.25rem 0.7rem 0.25rem 0.3rem;
+    border-radius: 999px;
+    background: #1f2937;
+    border: 1px solid #2a2a2a;
+    color: #d1d5db;
+  }
+  .seat-chip img,
+  .seat-initials {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #262626;
+  }
+  .seat-initials {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--color-muted);
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  .ctl {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    border: 1px solid #2a2a2a;
+    background: #1a1a1a;
+    color: #d1d5db;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .ctl:hover {
+    border-color: #22d3ee;
+    color: #22d3ee;
+  }
+  .ctl-primary {
+    border-color: #0e7490;
+    color: #22d3ee;
+  }
+  .ctl-hint {
+    font-size: 0.75rem;
+    color: var(--color-muted);
+  }
+
+  .chamber-head {
+    font-family: var(--font-display);
+    color: var(--color-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #2a2a2a;
+  }
+
+  .direction {
+    color: var(--color-muted);
+    font-style: italic;
+    font-size: 0.92rem;
+    margin: 1.1rem 0;
+    padding-left: 5rem;
+  }
+  @media (max-width: 640px) {
+    .direction {
+      padding-left: 0;
+    }
+  }
+
+  .cline {
+    display: flex;
+    gap: 1rem;
+    margin: 1.1rem 0;
+    padding: 0.85rem;
+    border-radius: 0.75rem;
+    border: 1px solid transparent;
+    transition: border-color 0.25s, background 0.25s;
+  }
+  .cline.speaking {
+    border-color: #164e63;
+    background: #16202a;
+  }
+  .cface {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.6rem;
+    border: 1px solid #2a2a2a;
+    background: #262626;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .cface-missing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-muted);
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+  .cface.pop {
+    animation: facepop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @keyframes facepop {
+    0% { transform: scale(0.4); }
+    70% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+
+  .cbody {
+    min-width: 0;
+  }
+  .cname {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--color-heading);
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+  .cchamber {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.72rem;
+    color: var(--color-muted);
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .ctext {
+    color: var(--color-body);
+    line-height: 1.7;
+  }
+  .ctext :global(em) {
+    color: var(--color-muted);
+  }
+  .ctext :global(code) {
+    font-family: var(--font-mono);
+    background: #1a1a1a;
+    padding: 0.15em 0.35em;
+    border-radius: 4px;
+    font-size: 0.85em;
+  }
+
+  .hidden-beat {
+    display: none;
+  }
+
+  .vote-body :global(p) {
+    margin-bottom: 0.9rem;
+    color: var(--color-body);
+  }
+  .vote-body :global(.vote-motion) {
+    font-style: italic;
+  }
+  .vote-body :global(.vote-result) {
+    font-family: var(--font-display);
+    color: #22d3ee;
+    font-size: 1.05rem;
+  }
+  .vote-body :global(ul) {
+    padding-left: 1.25rem;
+    list-style: disc;
+    color: var(--color-body);
+  }
+  .vote-body :global(li) {
+    margin-bottom: 0.4rem;
+  }
+  .vote-body :global(.vote-table) {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin: 1rem 0;
+  }
+  .vote-body :global(.vote-table th),
+  .vote-body :global(.vote-table td) {
+    border: 1px solid #2a2a2a;
+    padding: 0.45rem 0.65rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .vote-body :global(.vote-table th) {
+    font-family: var(--font-display);
+    color: var(--color-heading);
+    background: #1a1a1a;
+  }
+  .vote-body :global(strong) {
+    color: var(--color-heading);
+  }
+
+  .payload {
+    border-left: 3px solid #22d3ee;
+    padding: 1.1rem 1.4rem;
+    background: #101b1e;
+    border-radius: 0 0.6rem 0.6rem 0;
+    font-family: var(--font-display);
+    font-size: 1.12rem;
+    line-height: 1.6;
+    color: var(--color-heading);
+  }
+
+  .ruling :global(p) {
+    margin-bottom: 0.9rem;
+    color: var(--color-body);
+  }
+  .ruling :global(ul) {
+    padding-left: 1.25rem;
+    list-style: disc;
+    color: var(--color-body);
+  }
+  .ruling :global(li) {
+    margin-bottom: 0.4rem;
+  }
+  .ruling :global(strong) {
+    color: var(--color-heading);
+  }
+  .ruling :global(code) {
+    font-family: var(--font-mono);
+    background: #1a1a1a;
+    padding: 0.15em 0.35em;
+    border-radius: 4px;
+    font-size: 0.85em;
+  }
+</style>
